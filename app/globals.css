@@ -15,8 +15,6 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-regular: var(--font-regular);
-  --font-bold: var(--font-bold);
 }
 
 body {
