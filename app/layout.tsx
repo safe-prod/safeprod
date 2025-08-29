@@ -8,7 +8,10 @@ export const metadata: Metadata = {
 };
  
 const globalFont = localFont({
-  src: '../public/fonts/CMUSerif-Roman.woff2',
+  src: [
+    {path: '../public/fonts/CMUSerif-Roman.woff2'},
+    {path: '../public/fonts/CMUSerif-Bold.woff2'}
+  ]
 })
  
 export default function RootLayout({
