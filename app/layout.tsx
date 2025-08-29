@@ -14,7 +14,7 @@ const productFont = localFont({
   ]
 })
  
-export default function RootLayout({
+export default function Product({
   children,
 }: {
   children: React.ReactNode
