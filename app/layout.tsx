@@ -1,21 +1,24 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import localFont from 'next/font/local'
 
 export const metadata: Metadata = {
   title: "SAFE",
   description: "Superintelligence Alignment through Financial Engineering",
 };
-
+ 
+const globalFont = localFont({
+  src: '../public/fonts/CMUSerif-Roman.woff2',
+})
+ 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en">
-      <body>
-        {children}
-      </body>
+    <html lang="en" className={globalFont.className}>
+      <body>{children}</body>
     </html>
-  );
+  )
 }
