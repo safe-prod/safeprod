@@ -13,14 +13,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css">
-        <style>
-          body {
-            font-family: "Computer Modern Serif", serif;
-          }
-        </style>
-      </head>
       <body>
         {children}
       </body>
