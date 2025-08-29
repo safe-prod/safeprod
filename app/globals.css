@@ -17,13 +17,8 @@
   --color-foreground: var(--foreground);
 }
 
-@font-face {
-  font-family: "Computer Modern";
-  src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
-}
-
 body {
-  font-family: "Times New Roman";
+  font-family: "Times New Roman", Times, serif;
   background: var(--background);
   color: var(--foreground);
 }
