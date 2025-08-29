@@ -1,7 +1,8 @@
 export default function Home() {
   return (
-    <div className='font-regular'>
-      SAFE
+    <div>
+      <b>SAFE</b>
+      Superintelligence Alignment through Financial Engineering
     </div>
   );
 }
