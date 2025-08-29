@@ -9,8 +9,8 @@ export const metadata: Metadata = {
  
 const productFont = localFont({
   src: [
-    {path: '../public/fonts/CMUSerif-Roman.woff2', variable: '--font-regular'},
-    {path: '../public/fonts/CMUSerif-Bold.woff2', variable: '--font-bold'}
+    {path: '../public/fonts/CMUSerif-Roman.woff2', weight: '400'},
+    {path: '../public/fonts/CMUSerif-Bold.woff2', weight: '700'}
   ]
 })
  
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${productFont.src[0].variable} ${productFont.src[1].variable}`}>
+    <html lang="en" className={productFont.className}>
       <body>{children}</body>
     </html>
   )
