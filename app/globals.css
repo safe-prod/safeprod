@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --product-background: #ffffff;
-  --product-foreground: #171717;
+  --safe-background: #ffffff;
+  --safe-foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --product-background: #0a0a0a;
-    --product-foreground: #ededed;
+    --safe-background: #0a0a0a;
+    --safe-foreground: #ededed;
   }
 }
 
 @theme inline {
-  --color-background: var(--product-background);
-  --color-foreground: var(--product-foreground);
+  --color-background: var(--safe-background);
+  --color-foreground: var(--safe-foreground);
 }
 
 body {
-  background: var(--product-background);
-  color: var(--product-foreground);
+  background: var(--safe-background);
+  color: var(--safe-foreground);
 }
