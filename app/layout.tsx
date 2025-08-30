@@ -1,10 +1,10 @@
-import "./globals.css"
-import type { Metadata } from "next"
+import './globals.css'
+import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 
 export const metadata: Metadata = {
-  title: "SAFE",
-  description: "Superintelligence Alignment through Financial Engineering.",
+  title: 'SAFE',
+  description: 'Superintelligence Alignment through Financial Engineering.',
 }
  
 const safeFont = localFont({
@@ -14,13 +14,9 @@ const safeFont = localFont({
   ]
 })
  
-export default function SAFE({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function SAFE({children}: {children: React.ReactNode}) {
   return (
-    <html lang="en" className={safeFont.className}>
+    <html lang='en' className={safeFont.className}>
       <body>{children}</body>
     </html>
   )
