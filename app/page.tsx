@@ -1,7 +1,18 @@
 import { SI } from "./si.ts"
+import { useState } from "react"
 
 export default function Portfolio() {
-  let testResponse = SI("openai/gpt-oss-20b", "Hello")
+  const [inputText, setInputText] = useState("")
+  const [responseText, setResponseText] = useState("")
+
+  const handleInputChange = (event) => {
+    setInputText(event.target.value)
+  }
+
+  const handleButtonClick = async () => {
+    let response = SI("openai/gpt-oss-20b", inputText)
+    setResponseText(response)
+  }
   
   return (
     <div>
@@ -9,7 +20,14 @@ export default function Portfolio() {
       <br/>
       Superintelligence Alignment through Financial Engineering
       <br/>
-      {testResponse}
+      <input
+        type="text"
+        value={inputText}
+        onChange={handleInputChange}
+        placeholder="Type your message here"
+      />
+      <button onClick={handleButtonClick}>Send</button>
+      <p>{responseText}</p>
     </div>
   )
 }
