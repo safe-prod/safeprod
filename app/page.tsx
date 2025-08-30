@@ -11,7 +11,7 @@ export default function Portfolio() {
   }
 
   const handleButtonClick = async () => {
-    let response = SI("openai/gpt-oss-20b", inputText)
+    let response = await SI("openai/gpt-oss-20b", inputText)
     setResponseText(response)
   }
   
