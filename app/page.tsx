@@ -1,8 +1,8 @@
 import { SI } from "./si.ts"
 
 export default function Portfolio() {
-  text = SI("openai/gpt-oss-20b", "Hello")
-  alert(text)
+  let testResponse = SI("openai/gpt-oss-20b", "Hello")
+  alert(testResponse)
   return (
     <div>
       <b>SAFE</b>
