@@ -21,6 +21,7 @@ export default function Portfolio() {
       <br/>
       Superintelligence Alignment through Financial Engineering
       <br/>
+      <br/>
       <input
         type="text"
         value={inputText}
