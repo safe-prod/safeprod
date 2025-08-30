@@ -1,3 +1,4 @@
+"use client"
 import { SI } from "./si.ts"
 import { useState } from "react"
 
