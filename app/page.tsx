@@ -6,7 +6,7 @@ export default function Portfolio() {
   const [inputText, setInputText] = useState("")
   const [responseText, setResponseText] = useState("")
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value)
   }
 
