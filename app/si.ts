@@ -1,5 +1,5 @@
-import { createOpenRouter } from "@openrouter/ai-sdk-provider"
 import { streamText } from "ai"
+import { createOpenRouter } from "@openrouter/ai-sdk-provider"
 import { z } from "@openrouter-monorepo/type-utils/zod"
 
 export const SI = async (modelName: string, prompt: string) => {
