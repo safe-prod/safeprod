@@ -1,6 +1,7 @@
 import "./globals.css"
 import type { Metadata } from "next" 
 import localFont from "next/font/local"
+import { AppProps } from 'next/app'
 
 export const metadata: Metadata = {
   title: "SAFE",
@@ -13,7 +14,12 @@ const safeFont = localFont({
     {path: "../public/fonts/safeFontBold.woff2", weight: "700"}
   ]
 })
- 
+
+export default function SAFE({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />
+}
+
+/*
 export default function SAFE({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className={safeFont.className}>
@@ -21,3 +27,4 @@ export default function SAFE({children}: {children: React.ReactNode}) {
     </html>
   )
 }
+*/
