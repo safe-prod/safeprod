@@ -1,5 +1,5 @@
 "use client"
-import { SI } from "./si.ts"
+import { Journal } from "../books/journal.ts"
 import { useState } from "react"
 
 export default function Portfolio() {
@@ -11,7 +11,7 @@ export default function Portfolio() {
   }
 
   const handleButtonClick = async () => {
-    let response = await SI("openai/gpt-oss-20b", inputText)
+    let response = await Journal("openai/gpt-oss-20b", inputText)
     setResponseText(response)
   }
   
