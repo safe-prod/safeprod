@@ -23,7 +23,11 @@ return (
         <title>SAFE</title>
         <meta name="description" content="Superintelligence Alignment through Financial Engineering." />
       </Head>
-      <Component {...pageProps} />
+      <html lang="en" className={safeFont.className}>
+        <body>
+          <Component {...pageProps} />
+        </body>
+      </html>
     </>
   )
 }
