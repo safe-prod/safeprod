@@ -1,7 +1,8 @@
 import "./globals.css"
 import type { Metadata } from "next" 
 import localFont from "next/font/local"
-import { AppProps } from 'next/app'
+import { Head } from "next/head"
+import { AppProps } from "next/app"
 
 export const metadata: Metadata = {
   title: "SAFE",
@@ -16,7 +17,15 @@ const safeFont = localFont({
 })
 
 export default function SAFE({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+return (
+    <>
+      <Head>
+        <title>SAFE</title>
+        <meta name="description" content="Superintelligence Alignment through Financial Engineering." />
+      </Head>
+      <Component {...pageProps} />
+    </>
+  )
 }
 
 /*
