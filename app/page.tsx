@@ -1,5 +1,5 @@
 "use client"
-import { Journal } from "../books/journal.ts"
+import { Journal } from "../book/journal.ts"
 import { useState } from "react"
 
 export default function Portfolio() {
