@@ -1,13 +1,7 @@
-import "./globals.css"
-import type { Metadata } from "next" 
-import localFont from "next/font/local"
-import Head from "next/head"
 import { AppProps } from "next/app"
-
-export const metadata: Metadata = {
-  title: "SAFE",
-  description: "Superintelligence Alignment through Financial Engineering.",
-}
+import Head from "next/head"
+import "../styles/globals.css"
+import localFont from "next/font/local"
  
 const safeFont = localFont({
   src: [
@@ -17,7 +11,7 @@ const safeFont = localFont({
 })
 
 export default function SAFE({ Component, pageProps }: AppProps) {
-return (
+  return (
     <>
       <Head>
         <title>SAFE</title>
@@ -31,13 +25,3 @@ return (
     </>
   )
 }
-
-/*
-export default function SAFE({children}: {children: React.ReactNode}) {
-  return (
-    <html lang="en" className={safeFont.className}>
-      <body>{children}</body>
-    </html>
-  )
-}
-*/
