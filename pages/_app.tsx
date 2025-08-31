@@ -1,7 +1,7 @@
 import "./globals.css"
 import type { Metadata } from "next" 
 import localFont from "next/font/local"
-import { Head } from "next/head"
+import Head from "next/head"
 import { AppProps } from "next/app"
 
 export const metadata: Metadata = {
