@@ -1,6 +1,6 @@
 import { AppProps } from "next/app"
 import Head from "next/head"
-import "../utils/globals.css"
+import "../private/globals.css"
 import localFont from "next/font/local"
  
 const safeFont = localFont({
