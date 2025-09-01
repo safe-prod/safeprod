@@ -14,7 +14,7 @@ export default function Portfolio() {
   const handleButtonClick = async () => {
     let { responseText, tools } = await Journal("openai/gpt-oss-20b", inputText)
     setResponseText(responseText)
-    setTools(tools.toString())
+    setTools(JSON.stringify(tools))
   }
   
   return (
