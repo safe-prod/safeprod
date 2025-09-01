@@ -19,5 +19,6 @@ export const Journal = async (modelName: string, prompt: string) => {
   })
 
   await response.consumeStream()
-  return { response.text, tools }
+  const responseText = response.text
+  return { responseText, tools }
 }
