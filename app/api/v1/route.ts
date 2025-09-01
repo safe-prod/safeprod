@@ -1,3 +1,15 @@
+export async function GET(request) {
+  const data = { message: "Hello, World!" }
+  return new Response(JSON.stringify(data), {
+    status: 200,
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+}
+
+
+/*
 import type { NextApiRequest, NextApiResponse } from "next"
  
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -5,3 +17,4 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     res.status(200).json({ message: "SAFE" })
   }
 }
+*/
