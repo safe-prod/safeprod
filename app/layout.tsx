@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 const font = localFont({
   src: [
-    {path: "../public/fonts/regular.woff2", weight: "400"},
-    {path: "../public/fonts/bold.woff2", weight: "700"}
+    {path: "./font/regular.woff2", weight: "400"},
+    {path: "./font/bold.woff2", weight: "700"}
   ]
 })
 
