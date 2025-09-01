@@ -15,7 +15,7 @@ export const Journal = async (modelName: string, prompt: string) => {
   const response = streamText({
     model: openrouter(modelName),
     prompt: prompt,
-    // tools: tools
+    tools: tools
   })
 
   await response.consumeStream()
