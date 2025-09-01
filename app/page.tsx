@@ -5,14 +5,16 @@ import { useState } from "react"
 export default function Portfolio() {
   const [inputText, setInputText] = useState("")
   const [responseText, setResponseText] = useState("")
+  const [tools, setTools] = useState("")
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value)
   }
 
   const handleButtonClick = async () => {
-    let response = await Journal("openai/gpt-oss-20b", inputText)
+    let { response, tools } = await Journal("openai/gpt-oss-20b", inputText)
     setResponseText(response)
+    setTools(tools)
   }
   
   return (
@@ -30,6 +32,7 @@ export default function Portfolio() {
       />
       <button onClick={handleButtonClick}>Send</button>
       <p>{responseText}</p>
+      <p>{tools}</p>
     </div>
   )
 }
