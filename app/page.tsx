@@ -32,6 +32,7 @@ export default function Portfolio() {
       />
       <button onClick={handleButtonClick}>Send</button>
       <p>{responseText}</p>
+      <br/>
       <p>{tools}</p>
     </div>
   )
