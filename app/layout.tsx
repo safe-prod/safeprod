@@ -18,7 +18,7 @@ export default function SAFE({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className={font.className}>
       <head>
-        <link rel="icon" type="image/png" sizes="96x96" href="favicon.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/icon.png" />
       </head>
       <body>
         {children}
