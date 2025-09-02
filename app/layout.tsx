@@ -1,4 +1,4 @@
-import "./globals.css"
+import "./gui/style/globals.css"
 import localFont from "next/font/local"
 import type { Metadata } from "next"
  
@@ -9,18 +9,25 @@ export const metadata: Metadata = {
 
 const font = localFont({
   src: [
-    {path: "./font/regular.woff2", weight: "400"},
-    {path: "./font/bold.woff2", weight: "700"}
+    {path: "./gui/style/regular.woff2", weight: "400"},
+    {path: "./gui/style/bold.woff2", weight: "700"}
   ]
 })
+
+const ID = "ajde23dns"
 
 export default function Layout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className={font.className}>
       <head>
-        <link rel="icon" type="image/png" sizes="96x96" href="/icon.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/gui/style/icon.png" />
       </head>
-      <body>
+      <body className="m-4 flex flex-col gap-y-4">
+        <div className="text-xl">
+          <span className="font-bold">SAFE</span>
+          <span className="pl-2 pr-2">/</span>
+          <span>{ID}</span>
+        </div>
         {children}
       </body>
     </html>
