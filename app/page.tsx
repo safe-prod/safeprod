@@ -4,9 +4,9 @@ import { useState } from "react"
 export default function Page() {
   const ID = "ajde23dns"
   const [journal, setJournal] = useState([
-    { transaction: "Deposit", debit: 0, credit: 100 },
-    { transaction: "Withdrawal", debit: 50, credit: 0 },
-    { transaction: "Transfer", debit: 20, credit: 30 },
+    { transaction: "01/04/2025\nDeposit", debit: 0, credit: 100 },
+    { transaction: "02/04/2025\nWithdrawal", debit: 50, credit: 0 },
+    { transaction: "03/04/2025\nTransfer", debit: 20, credit: 30 },
   ])
   
   return (
@@ -17,7 +17,7 @@ export default function Page() {
         <span>{ID}</span>
       </div>
       
-	  <table className="overflow-x-auto min-w-full">
+	  <table className="m-0 px-0 overflow-x-auto min-w-full">
 		<thead>
 		  <tr>
 		    <th className="px-4 py-2 text-left">Transaction</th>
