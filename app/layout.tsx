@@ -14,7 +14,7 @@ const font = localFont({
   ]
 })
 
-export default function SAFE({children}: {children: React.ReactNode}) {
+export default function Layout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className={font.className}>
       <head>
