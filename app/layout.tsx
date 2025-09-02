@@ -31,9 +31,9 @@ export default function Layout({children}: {children: React.ReactNode}) {
               <span className="pl-2 pr-2">/</span>
               <span>{ID}</span>
             </div>
-            <div className="grow-2 gap-x-2">
-              <Link href="/gui">gui</Link>
-              <Link href="/api">api</Link>
+            <div className="grow-2 flex flex-row gap-x-2">
+              <Link href="/gui" className="grow">gui</Link>
+              <Link href="/api" className="grow">api</Link>
             </div>
           </div>
           {children}
