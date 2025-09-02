@@ -8,6 +8,11 @@ export default function Page() {
   const [inputText, setInputText] = useState("")
   const [responseText, setResponseText] = useState("")
   const [tools, setTools] = useState("")
+  const [journal, setJournal] = useState([
+    { transaction: "Deposit", debit: 0, credit: 100 },
+    { transaction: "Withdrawal", debit: 50, credit: 0 },
+    { transaction: "Transfer", debit: 20, credit: 30 },
+  ]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value)
@@ -27,24 +32,26 @@ export default function Page() {
         <span>{ID}</span>
       </div>
       
-      <div className="overflow-x-auto">
-			<table className="min-w-full border-collapse border border-gray-200">
-				<thead>
-					<tr className="bg-gray-100">
-						<th className="border border-gray-200 px-4 py-2 text-left">Transaction</th>
-						<th className="border border-gray-200 px-4 py-2 text-left">Debit</th>
-						<th className="border border-gray-200 px-4 py-2 text-left">Credit</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td className="border border-gray-200 px-4 py-2">prkfk34ss</td>
-						<td className="border border-gray-200 px-4 py-2">$100</td>
-						<td className="border border-gray-200 px-4 py-2"></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
+      <div className="text-sm overflow-x-auto">
+	    <table className="min-w-full">
+		  <thead>
+		    <tr>
+			  <th className="px-4 py-2 text-left">Transaction</th>
+			  <th className="px-4 py-2 text-left">Debit</th>
+			  <th className="px-4 py-2 text-left">Credit</th>
+			</tr>
+		  </thead>
+	      <tbody>
+            {journal.map((entry, index) => (
+              <tr key={index}>
+                <td className="px-4 py-2">{entry.transaction}</td>
+                <td className="px-4 py-2">{entry.debit}</td>
+                <td className="px-4 py-2">{entry.credit}</td>
+              </tr>
+            ))}
+          </tbody>
+		</table>
+	  </div>
       
       <input
         type="text"
