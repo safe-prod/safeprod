@@ -1,4 +1,4 @@
-const Dice = [
+export const Dice = [
   "roll_dice",
   "Rolls an N-sided die",
   { sides: z.number().int().min(2) },
@@ -9,5 +9,3 @@ const Dice = [
       }
   }
 ]
-
-export Dice
