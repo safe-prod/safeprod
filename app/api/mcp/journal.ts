@@ -1,5 +1,5 @@
 import { z } from "zod"
-
+/*
 export const Coin: [
   string,
   string,
@@ -16,3 +16,4 @@ export const Coin: [
     }
   }
 ]
+*/
