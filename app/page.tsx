@@ -4,9 +4,9 @@ import { useState } from "react"
 export default function Page() {
   const ID = "ajde23dns"
   const [journal, setJournal] = useState([
-    { transaction: "01/04/2025\nDeposit", debit: 0, credit: 100 },
-    { transaction: "02/04/2025\nWithdrawal", debit: 50, credit: 0 },
-    { transaction: "03/04/2025\nTransfer", debit: 20, credit: 30 },
+    { datetime: "01/04/2025", lineItem: "Cash", debit: 10, credit: 0 },
+    { datetime: "02/04/2025", lineItem: "Content", debit: 0, credit: 15 },
+    { datetime: "03/04/2025", lineItem: "Cash", debit: 15, credit: 0 }
   ])
   
   return (
@@ -20,7 +20,8 @@ export default function Page() {
 	  <table className="m-0 px-0 overflow-x-auto min-w-full">
 		<thead>
 		  <tr>
-		    <th className="px-4 py-2 text-left">Transaction</th>
+			<th className="px-4 py-2 text-left">Datetime</th>
+		    <th className="px-4 py-2 text-left">Line Item</th>
 			<th className="px-4 py-2 text-left">Debit</th>
 			<th className="px-4 py-2 text-left">Credit</th>
 		  </tr>
@@ -28,7 +29,8 @@ export default function Page() {
 	    <tbody>
           {journal.map((entry, index) => (
             <tr key={index}>
-              <td className="px-4 py-2">{entry.transaction}</td>
+			  <td className="px-4 py-2">{entry.datetime}</td>
+              <td className="px-4 py-2">{entry.lineItem}</td>
               <td className="px-4 py-2">{entry.debit}</td>
               <td className="px-4 py-2">{entry.credit}</td>
             </tr>
