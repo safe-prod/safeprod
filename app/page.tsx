@@ -20,10 +20,10 @@ export default function Page() {
   }
   
   return (
-    <div class="m-8 flex flex-col">
-      <div class="text-xl">
-        <span class="font-bold">SAFE</span>
-        <span class="pl-2 pr-2">/</span>
+    <div className="m-8 flex flex-col">
+      <div className="text-xl">
+        <span className="font-bold">SAFE</span>
+        <span className="pl-2 pr-2">/</span>
         <span>{ID}</span>
       </div>
       <input
