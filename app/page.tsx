@@ -2,7 +2,9 @@
 import { Journal } from "./api/mcp/journal.ts"
 import { useState } from "react"
 
-export default function Portfolio() {
+export default function Page() {
+  const ID = "ajde23dns"
+  
   const [inputText, setInputText] = useState("")
   const [responseText, setResponseText] = useState("")
   const [tools, setTools] = useState("")
@@ -18,12 +20,12 @@ export default function Portfolio() {
   }
   
   return (
-    <div>
-      <b>SAFE</b>
-      <br/>
-      Superintelligence Alignment through Financial Engineering
-      <br/>
-      <br/>
+    <div class="m-8 flex flex-col">
+      <div class="text-xl">
+        <span class="font-bold">SAFE</span>
+        <span class="pl-2 pr-2">/</span>
+        <span>{ID}</span>
+      </div>
       <input
         type="text"
         value={inputText}
