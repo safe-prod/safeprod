@@ -7,11 +7,11 @@ export const Coin = [
   "toss_coin",
   "Tosses a coin",
   { sides: z.number().int().min(2) },
-  async ({ sides: number }) => {
+  async (sides) => {
     const value = 1 + Math.floor(Math.random() * sides);
-      return {
-        content: [{ type: "text", text: `You tossed a ${value}!` }],
-      }
+    return {
+      content: [{ type: "text", text: `You tossed a ${value}!` }],
+    }
   }
 ]
 
