@@ -1,5 +1,5 @@
 "use client"
-import { Journal } from "../../api/mcp/journal.ts"
+import { Cycle } from "../../cycle.ts"
 import { useState } from "react"
 
 export default function Page() {
@@ -12,7 +12,7 @@ export default function Page() {
   }
 
   const handleButtonClick = async () => {
-    let {responseText, tools} = await Journal("openai/gpt-oss-20b", inputText)
+    let {responseText, tools} = await Cycle("openai/gpt-oss-20b", inputText)
     setResponseText(responseText)
     setTools(JSON.stringify(tools))
   }
