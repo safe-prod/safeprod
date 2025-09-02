@@ -17,22 +17,22 @@ export default function Page() {
         <span>{ID}</span>
       </div>
       
-	  <table className="m-0 px-0 overflow-x-auto min-w-full">
+	  <table className="overflow-x-auto min-w-full">
 		<thead>
 		  <tr>
-			<th className="px-4 py-2 text-left">Datetime</th>
-		    <th className="px-4 py-2 text-left">Line Item</th>
-			<th className="px-4 py-2 text-left">Debit</th>
-			<th className="px-4 py-2 text-left">Credit</th>
+			<th className="py-2 text-left">Datetime</th>
+		    <th className="py-2 text-left">Line Item</th>
+			<th className="py-2 text-left">Debit</th>
+			<th className="py-2 text-left">Credit</th>
 		  </tr>
 		</thead>
 	    <tbody>
           {journal.map((entry, index) => (
             <tr key={index}>
-			  <td className="px-4 py-2">{entry.datetime}</td>
-              <td className="px-4 py-2">{entry.lineItem}</td>
-              <td className="px-4 py-2">{entry.debit}</td>
-              <td className="px-4 py-2">{entry.credit}</td>
+			  <td className="py-2">{entry.datetime}</td>
+              <td className="py-2">{entry.lineItem}</td>
+              <td className="py-2">{entry.debit}</td>
+              <td className="py-2">{entry.credit}</td>
             </tr>
           ))}
         </tbody>
