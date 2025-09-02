@@ -5,7 +5,7 @@ import { Coin } from "./journal.ts"
  
 const handler = createMcpHandler(
   (server) => {
-    server.tool(Coin)
+    server.tool(...Coin)
   },
   {},
   { basePath: "/api" }
