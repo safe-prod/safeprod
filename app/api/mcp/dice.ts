@@ -1,3 +1,5 @@
+import { z } from "zod"
+
 export const Dice = [
   "roll_dice",
   "Rolls an N-sided die",
