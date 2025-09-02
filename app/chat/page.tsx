@@ -1,5 +1,5 @@
 "use client"
-import { Journal } from "../app/api/mcp/journal.ts"
+import { Journal } from "../api/mcp/journal.ts"
 import { useState } from "react"
 
 export default function Page() {
