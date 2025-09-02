@@ -1,7 +1,8 @@
 import "./gui/style/globals.css"
 import localFont from "next/font/local"
 import type { Metadata } from "next"
- 
+import Link from "next/link"
+
 export const metadata: Metadata = {
   title: "SAFE",
   description: "Superintelligence Alignment through Financial Engineering." 
@@ -22,13 +23,21 @@ export default function Layout({children}: {children: React.ReactNode}) {
       <head>
         <link rel="icon" type="image/png" sizes="96x96" href="/gui/style/icon.png" />
       </head>
-      <body className="m-4 flex flex-col gap-y-4">
-        <div className="text-xl">
-          <span className="font-bold">SAFE</span>
-          <span className="pl-2 pr-2">/</span>
-          <span>{ID}</span>
+      <body>
+        <div className="m-4 flex flex-col gap-y-4">
+         <div className="text-xl flex flex-row">
+            <div>
+              <span className="font-bold">SAFE</span>
+              <span className="pl-2 pr-2">/</span>
+              <span>{ID}</span>
+            </div>
+            <div className="grow-0">
+              <Link href="/gui">gui</Link>
+              <Link href="/api">api</Link>
+            </div>
+          </div>
+          {children}
         </div>
-        {children}
       </body>
     </html>
   )
