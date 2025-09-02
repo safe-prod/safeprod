@@ -25,13 +25,13 @@ export default function Layout({children}: {children: React.ReactNode}) {
       </head>
       <body>
         <div className="m-4 flex flex-col gap-y-4">
-         <div className="text-xl flex flex-row">
-            <div>
+         <div className="text-xl flex flex-row gap-x-4">
+            <div className="grow-8">
               <span className="font-bold">SAFE</span>
               <span className="pl-2 pr-2">/</span>
               <span>{ID}</span>
             </div>
-            <div className="grow-0">
+            <div className="grow-2 gap-x-2">
               <Link href="/gui">gui</Link>
               <Link href="/api">api</Link>
             </div>
