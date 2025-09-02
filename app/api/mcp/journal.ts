@@ -3,7 +3,12 @@ import { createOpenRouter } from "@openrouter/ai-sdk-provider"
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js"
 import { z } from "zod"
 
-export const Coin: [string, string, { sides: z.ZodNumber }, (sides: number) => Promise<void>] = [
+export const Coin: [
+  string,
+  string,
+  { sides: z.ZodNumber },
+  (sides: number) => Promise<{ content: { type: string, text: string }[] }>
+] = [
   "toss_coin",
   "Tosses a coin",
   { sides: z.number().int().min(2) },
