@@ -12,7 +12,7 @@ export default function Page() {
   }
 
   const handleButtonClick = async () => {
-    let {responseText, tools} = await Cycle("openai/gpt-oss-20b", inputText)
+    let {responseText, tools} = await Cycle(inputText)
     setResponseText(responseText)
     setTools(JSON.stringify(tools))
   }
