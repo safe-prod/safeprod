@@ -4,12 +4,12 @@ import { z } from "zod"
 const handler = createMcpHandler(
   (server) => {
     server.tool(
-      "read_journal",
-      "Read your accounting journal",
+      "retrieve_name",
+      "Retrieve the name of the user",
       {},
       async ({}) => {
         return {
-          content: [{ type: "text", text: `|Line Item|Debit|Credit|\n|---|---|---|\n|Cash||100|\n|Fixed assets|50||` }],
+          content: [{ type: "text", text: `James`}],
         }
       }
     )
