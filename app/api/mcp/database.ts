@@ -21,9 +21,13 @@ await db.exec(`
   VALUES("Cash", 100, 0)
 `)
 
+/*
 const DBResult = await db.all(
   `SELECT * FROM journal`
 )
+*/
+
+const DBResult = "Rows"
 
 await db.close()
 
