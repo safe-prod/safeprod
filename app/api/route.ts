@@ -1,6 +1,35 @@
 import { NextRequest } from "next/server"
-import { setupDatabase } from "./mcp/database.ts"
+// import { setupDatabase } from "./mcp/database.ts"
+import sqlite3 from "sqlite3"
+import { open } from "sqlite"
 
+export async function GET(request: NextRequest) {
+  try {
+    const db = await open({filename: "./database.db", driver: sqlite3.Database})
+    await db.exec(`CREATE TABLE IF NOT EXISTS journal (id INTEGER PRIMARY KEY, lineItem TEXT NOT NULL, debit DECIMAL(10, 2) NOT NULL, credit DECIMAL(10, 2) NOT NULL)`)
+    await db.exec(`INSERT INTO journal(lineItem, debit, credit) VALUES("Cash", 100, 0)`)
+    const DBResult = await db.all(`SELECT * FROM journal`)
+    await db.close()
+
+    const data = { message: DBResult }
+    return new Response(JSON.stringify(data), {
+      status: 200,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+  } catch (error) {
+    console.error("Error setting up database:", error)
+    return new Response(JSON.stringify({ error: "Failed to set up database" }), {
+      status: 500,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+  }
+}
+
+/*
 export async function GET(request: NextRequest) {
   try {
     const message = await setupDatabase()
@@ -21,3 +50,4 @@ export async function GET(request: NextRequest) {
     })
   }
 }
+*/
