@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server"
-import { DBResult } from "./mcp/database.ts"
+import DBResult from "./mcp/database.ts"
 
 export async function GET(request: NextRequest) {
   const data = { message: DBResult.toString() }
