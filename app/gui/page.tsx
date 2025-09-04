@@ -21,6 +21,7 @@ export default function Page() {
   }
   
   return (
+  <div>
     <table className="overflow-x-auto min-w-full">
 	  <thead>
         <tr>
@@ -51,5 +52,6 @@ export default function Page() {
       <button onClick={handleButtonClick}>Send</button>
       <p>{responseText}</p>
     </div>
+  </div>
   )
 }
