@@ -33,4 +33,4 @@ const DBResult = db.all(
 
 db.close()
 
-export DBResult
+export { DBResult }
