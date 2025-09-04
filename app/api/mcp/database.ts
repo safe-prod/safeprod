@@ -21,8 +21,10 @@ await db.exec(`
   VALUES("Cash", 100, 0)
 `)
 
-export const DBResult = await db.all(
+const DBResult = await db.all(
   `SELECT * FROM journal`
 )
 
 await db.close()
+
+export { DBResult }
