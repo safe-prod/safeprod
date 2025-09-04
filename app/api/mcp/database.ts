@@ -25,4 +25,4 @@ export const DBResult = await db.all(
   `SELECT * FROM journal`
 )
 
-db.close()
+await db.close()
