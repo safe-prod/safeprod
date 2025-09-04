@@ -19,7 +19,12 @@ db.run(
    products(lineItem, debit, credit)
    VALUES(?, ?, ?)
   `,
-  ["Cash", 100, 0]
+  ["Cash", 100, 0],
+  (err) => {}
+)
+
+export const DBResult = db.all(
+  `SELECT * FROM journal`,
   (err) => {}
 )
 
