@@ -1,5 +1,5 @@
 "use client"
-import { Cycle } from "../../cycle.ts"
+import { MCPHost } from "../../api/mcp/host.ts"
 import { useState } from "react"
 
 export default function Page() {
@@ -12,7 +12,7 @@ export default function Page() {
   }
 
   const handleButtonClick = async () => {
-    let {responseText, tools} = await Cycle(inputText)
+    let {responseText, tools} = await MCPHost(inputText)
     setResponseText(responseText)
     setTools(JSON.stringify(tools))
   }
