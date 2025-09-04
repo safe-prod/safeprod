@@ -23,9 +23,14 @@ db.run(
   (err) => {}
 )
 
-export const DBResult = db.all(
+const DBResult = db.all(
   `SELECT * FROM journal`,
-  (err) => {}
+  [],
+  (err, rows) => {
+    DBResult = rows
+  }
 )
 
 db.close()
+
+export DBResult
