@@ -1,8 +1,12 @@
-import sqlite3 from "sqlite3"
+import sqlite3 from "sqlite3" 
+import { open } from "sqlite"
 
-const db = new sqlite3.Database("database.db")
+const db = await open({
+  filename: "/database.db",
+  driver: sqlite3.Database
+})
 
-db.exec(
+await db.exec(
   `
   CREATE TABLE IF NOT EXISTS journal (
     id INTEGER PRIMARY KEY,
@@ -11,26 +15,18 @@ db.exec(
     credit DECIMAL(10, 2) NOT NULL,
   )
   `,
-  (err) => {}
 )
 
-db.run(
+await db.exec(
   `INSERT INTO
    products(lineItem, debit, credit)
    VALUES(?, ?, ?)
   `,
   ["Cash", 100, 0],
-  (err) => {}
 )
 
-const DBResult = db.all(
-  `SELECT * FROM journal`,
-  [],
-  (err, rows) => {
-    DBResult = rows
-  }
+export const DBResult = await db.all(
+  `SELECT * FROM journal`
 )
 
 db.close()
-
-export { DBResult }
