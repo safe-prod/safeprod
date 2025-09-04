@@ -6,24 +6,20 @@ const db = await open({
   driver: sqlite3.Database
 })
 
-await db.exec(
-  `
+await db.exec(`
   CREATE TABLE IF NOT EXISTS journal (
     id INTEGER PRIMARY KEY,
     lineItem TEXT NOT NULL,
     debit DECIMAL(10, 2) NOT NULL,
     credit DECIMAL(10, 2) NOT NULL,
   )
-  `,
-)
+`)
 
-await db.exec(
-  `INSERT INTO
-   products(lineItem, debit, credit)
-   VALUES(?, ?, ?)
-  `,
-  ["Cash", 100, 0],
-)
+await db.exec(`
+  INSERT INTO
+  products(lineItem, debit, credit)
+  VALUES("Cash", 100, 0)
+`)
 
 export const DBResult = await db.all(
   `SELECT * FROM journal`
