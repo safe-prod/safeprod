@@ -17,7 +17,7 @@ await db.exec(`
 
 await db.exec(`
   INSERT INTO
-  products(lineItem, debit, credit)
+  journal(lineItem, debit, credit)
   VALUES("Cash", 100, 0)
 `)
 
