@@ -5,16 +5,14 @@ import { useState } from "react"
 export default function Page() {
   const [inputText, setInputText] = useState("")
   const [responseText, setResponseText] = useState("")
-  const [tools, setTools] = useState("")
   
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value)
   }
 
   const handleButtonClick = async () => {
-    let {responseText, tools} = await MCPHost(inputText)
+    let responseText = await MCPHost(inputText)
     setResponseText(responseText)
-    setTools(JSON.stringify(tools))
   }
   
   return (
@@ -27,8 +25,6 @@ export default function Page() {
       />
       <button onClick={handleButtonClick}>Send</button>
       <p>{responseText}</p>
-      <br/>
-      <p>{tools}</p>
     </div>
   )
 }
