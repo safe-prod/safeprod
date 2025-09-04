@@ -8,7 +8,6 @@ export default function Page() {
     { datetime: "02/04/2025", lineItem: "Content", debit: 0, credit: 15 },
     { datetime: "03/04/2025", lineItem: "Cash", debit: 15, credit: 0 }
   ])
-
   const [inputText, setInputText] = useState("")
   const [responseText, setResponseText] = useState("")
   
