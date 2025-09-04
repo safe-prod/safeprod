@@ -19,5 +19,5 @@ export const MCPHost = async (prompt: string) => {
 
   await response.consumeStream()
   const responseText = await response.text
-  return { responseText, tools }
+  return responseText
 }
