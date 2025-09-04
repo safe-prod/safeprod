@@ -1,8 +1,7 @@
-import { NextRequest } from "next/server"
 import fs from "fs"
 import path from "path"
+import { NextRequest } from "next/server"
 
-// api
 export async function GET() {
   const filePath = path.join(process.cwd(), "app/api/mcp/journal.csv")
   const fileContents = fs.readFileSync(filePath, "utf8")
