@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react"
-import { MCPHost } from "../api/mcp/host.ts"
+import { MCPHost } from "../api/mcp/route.ts"
 
 export default function Page() {
   const [journal, setJournal] = useState([
