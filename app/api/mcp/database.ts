@@ -27,8 +27,6 @@ const DBResult = await db.all(
 )
 */
 
-const DBResult = "Rows"
-
 await db.close()
 
-export { DBResult }
+export const DBResult = "Rows"
