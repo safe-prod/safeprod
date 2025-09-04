@@ -11,7 +11,7 @@ await db.exec(`
     id INTEGER PRIMARY KEY,
     lineItem TEXT NOT NULL,
     debit DECIMAL(10, 2) NOT NULL,
-    credit DECIMAL(10, 2) NOT NULL,
+    credit DECIMAL(10, 2) NOT NULL
   )
 `)
 
