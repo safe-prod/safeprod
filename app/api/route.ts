@@ -1,9 +1,9 @@
 import { NextRequest } from "next/server"
-import { DBResult } from "./mcp/database.ts"
+import { setupDatabase } from "./mcp/database.ts"
 
 export async function GET(request: NextRequest) {
-  // const message = JSON.stringify(DBResult)
-  const data = { message: "DBResult.toString()" }
+  const message = await setupDatabase()
+  const data = { message: message }
   return new Response(JSON.stringify(data), {
     status: 200,
     headers: {
