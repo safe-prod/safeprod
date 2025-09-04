@@ -1,5 +1,6 @@
 "use client"
 import { useState } from "react"
+import { MCPHost } from "../api/mcp/host.ts"
 
 export default function Page() {
   const [journal, setJournal] = useState([
@@ -7,6 +8,18 @@ export default function Page() {
     { datetime: "02/04/2025", lineItem: "Content", debit: 0, credit: 15 },
     { datetime: "03/04/2025", lineItem: "Cash", debit: 15, credit: 0 }
   ])
+
+  const [inputText, setInputText] = useState("")
+  const [responseText, setResponseText] = useState("")
+  
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputText(event.target.value)
+  }
+
+  const handleButtonClick = async () => {
+    let responseText = await MCPHost(inputText)
+    setResponseText(responseText)
+  }
   
   return (
     <table className="overflow-x-auto min-w-full">
@@ -29,5 +42,15 @@ export default function Page() {
         ))}
       </tbody>
 	</table>
+	<div className="m-4 flex flex-col gap-y-4">
+      <input
+        type="text"
+        value={inputText}
+        onChange={handleInputChange}
+        placeholder="Type your message here"
+      />
+      <button onClick={handleButtonClick}>Send</button>
+      <p>{responseText}</p>
+    </div>
   )
 }
