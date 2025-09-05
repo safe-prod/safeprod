@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server"
-import { getContract } from "../_accounting/cycle.ts"
+import { getContract } from "../lib/accounting/cycle.ts"
 
 export async function GET() {
   let contract = getContract()
