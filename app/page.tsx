@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react"
 import { MCPHost } from "./api/mcp/_host.ts"
-import { getContract } from "./api/mcp/_accounting/cycle.ts"
+import { getContract } from "./_accounting/cycle.ts"
 
 export default function Page() {
   let contract = getContract()
