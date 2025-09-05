@@ -1,7 +1,7 @@
 import { createMcpHandler } from "mcp-handler"
 import { z } from "zod"
 
-const MCPServer = createMcpHandler(
+const handler = createMcpHandler(
   (server) => {
     server.tool(
       "retrieve_name",
@@ -18,4 +18,4 @@ const MCPServer = createMcpHandler(
   { basePath: "/api" },
 )
 
-export { MCPServer as GET, MCPServer as POST }
+export { handler as GET, handler as POST }
