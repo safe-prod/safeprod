@@ -1,7 +1,7 @@
 import fs from "fs"
 import path from "path"
 import { NextRequest } from "next/server"
-let nj = require("numjs")
+var nj = require("numjs")
 
 export async function GET() {
   let journal = nj.array(JSON.parse(fs.readFileSync(path.join(process.cwd(), "app/api/mcp/_journal"), "utf8")))
