@@ -1,7 +1,6 @@
 "use client"
 import { useState } from "react"
-import { getContract } from "./_accounting/cycle.ts"
-import { MCPHost } from "./api/mcp/_host.ts"
+import { getContract, getResponse } from "./_accounting/cycle.ts"
 
 export default function Page() {
   let contract = getContract()
@@ -13,7 +12,7 @@ export default function Page() {
     setInputText(event.target.value)
   }
   const handleButtonClick = async () => {
-    let responseText = await MCPHost(inputText)
+    let responseText = await getResponse(inputText)
     setResponseText(responseText)
   }
   
