@@ -1,16 +1,15 @@
 import { createMcpHandler } from "mcp-handler"
 import { z } from "zod"
-
 import fs from "fs"
 import path from "path"
 import { matrix } from "mathjs"
 
-export const Buy = () => {
+export const Contract = () => {
   let journal = JSON.parse(fs.readFileSync(path.join(process.cwd(), "app/api/mcp/_journal"), "utf8"))
-  return journal
+  return {type: "SAFE", id: "asdf10", journal: journal}
 }
 
-const handler = createMcpHandler(
+const MCPServer = createMcpHandler(
   (server) => {
     server.tool(
       "retrieve_name",
@@ -27,4 +26,4 @@ const handler = createMcpHandler(
   { basePath: "/api" },
 )
 
-export { handler as GET, handler as POST }
+export { MCPServer as GET, MCPServer as POST }
