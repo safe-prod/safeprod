@@ -1,8 +1,10 @@
 import { NextRequest } from "next/server"
+import { getContract } from "./mcp/route.ts"
 
 export async function GET() {
+  let contract = getContract()
   return new Response(
-    JSON.stringify({"type": "SAFE", "id": "asdf12", "journal": [["Cash",100,0]]}),
+    JSON.stringify(contract),
     {status: 200, headers: {"Content-Type": "application/json"}}
   )
 }
