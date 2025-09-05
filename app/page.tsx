@@ -1,31 +1,29 @@
 "use client"
 import { useState } from "react"
 import { MCPHost } from "./api/mcp/_host.ts"
+import { getContract } from "./api/mcp/route.ts"
 
 export default function Page() {
-  const [journal, setJournal] = useState([
-    { datetime: "01/04/2025", lineItem: "Cash", debit: 10, credit: 0 },
-    { datetime: "02/04/2025", lineItem: "Content", debit: 0, credit: 15 },
-    { datetime: "03/04/2025", lineItem: "Cash", debit: 15, credit: 0 }
-  ])
+  let contract = getContract()
+  const [journal, setJournal] = useState(contract.journal)
+  
   const [inputText, setInputText] = useState("")
   const [responseText, setResponseText] = useState("")
-  
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value)
   }
-
   const handleButtonClick = async () => {
     let responseText = await MCPHost(inputText)
     setResponseText(responseText)
   }
   
   return (
-  <div>
+  <div className="m-4 flex flex-col gap-y-4">
+	<div className="font-bold">{contract.type}</div>
+    <div>{contract.id}</div>
     <table className="overflow-x-auto min-w-full">
 	  <thead>
         <tr>
-		  <th className="py-2 text-left">Datetime</th>
 		  <th className="py-2 text-left">Line Item</th>
 	      <th className="py-2 text-left">Debit</th>
 		  <th className="py-2 text-left">Credit</th>
@@ -34,10 +32,9 @@ export default function Page() {
 	  <tbody>
         {journal.map((entry, index) => (
           <tr key={index}>
-		    <td className="py-2">{entry.datetime}</td>
-            <td className="py-2">{entry.lineItem}</td>
-            <td className="py-2">{entry.debit}</td>
-            <td className="py-2">{entry.credit}</td>
+            <td className="py-2">{entry[0]}</td>
+            <td className="py-2">{entry[1]}</td>
+            <td className="py-2">{entry[2]}</td>
           </tr>
         ))}
       </tbody>
