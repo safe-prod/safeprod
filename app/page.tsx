@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react"
-import { getContract, getResponse } from "./_accounting/cycle.ts"
+import { getContract, getResponse } from "./lib/accounting/cycle.ts"
 
 export default function Page() {
   let contract = getContract()
