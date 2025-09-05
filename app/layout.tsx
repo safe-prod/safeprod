@@ -14,8 +14,6 @@ const font = localFont({
   ]
 })
 
-const ID = "ajde23dns"
-
 export default function Layout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className={font.className}>
@@ -24,8 +22,6 @@ export default function Layout({children}: {children: React.ReactNode}) {
       </head>
       <body>
         <div className="m-4 flex flex-col gap-y-4">
-          <div className="font-bold">SAFE</div>
-          <div>{ID}</div>
           {children}
         </div>
       </body>
