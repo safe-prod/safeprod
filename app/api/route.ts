@@ -5,6 +5,6 @@ import { matrix } from "mathjs"
 
 export async function GET() {
   let journal = matrix(JSON.parse(fs.readFileSync(path.join(process.cwd(), "app/api/mcp/_journal"), "utf8")))
-  const data = { message: journal.get(0) }
+  const data = { message: journal.get([0]) }
   return new Response(JSON.stringify(data), {status: 200, headers: {"Content-Type": "application/json"}})
 }
