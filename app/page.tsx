@@ -2,7 +2,7 @@
 import { useState } from "react"
 import { getPDS, getResponse } from "./lib/main.ts"
 
-export default const Page = () => {
+export default function Page() {
   const [prompt, setPrompt] = useState("")
   const [response, setResponse] = useState("")
   const [loading, setLoading] = useState(false)
