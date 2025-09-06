@@ -10,14 +10,7 @@ export const getPDS = () => {
 }
 
 export const getResponse = async function* (prompt: string): AsyncGenerator<string> {
-  
-  /*
-  The safeprod mcp server is only for having a mcp server that we can test
-  The safeprod mcp server will not be used for anything else. it is equivalent to the api route
-  All the mcp clients will be connected here, not on safeprod mcp server
-  */
-  const url = new URL("https://safeprod.vercel.app/api/mcp")
-  
+  const url = new URL("https://safeprod.vercel.app/api/mcp")  
   const client = await createMCPClient({transport: new StreamableHTTPClientTransport(url, { sessionId: "123" })})
   const tools = await client.tools()
   
