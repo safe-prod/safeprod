@@ -1,20 +1,10 @@
 "use client"
 import { useState } from "react"
-import { getContract, getResponse } from "./lib/accounting/cycle.ts"
+import { getContract } from "./lib/accounting/cycle.ts"
 
 export default function Page() {
   let contract = getContract()
   const [journal, setJournal] = useState(contract.journal)
-  
-  const [inputText, setInputText] = useState("")
-  const [responseText, setResponseText] = useState("")
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputText(event.target.value)
-  }
-  const handleButtonClick = async () => {
-    let responseText = await getResponse(inputText)
-    setResponseText(responseText)
-  }
   
   return (
   <div className="m-4 flex flex-col gap-y-4">
@@ -38,16 +28,6 @@ export default function Page() {
         ))}
       </tbody>
 	</table>
-	<div className="m-4 flex flex-col gap-y-4">
-      <input
-        type="text"
-        value={inputText}
-        onChange={handleInputChange}
-        placeholder="Type your message here"
-      />
-      <button onClick={handleButtonClick}>Send</button>
-      <p>{responseText}</p>
-    </div>
   </div>
   )
 }
