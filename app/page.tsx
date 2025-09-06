@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react"
-import { getPDS, getResponse } from "./api/mcp/lib/main.ts"
+import { getPDS, getResponse } from "./api/lib/main.ts"
 
 export default function Page() {
   const [prompt, setPrompt] = useState("")
