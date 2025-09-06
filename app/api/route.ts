@@ -1,10 +1,10 @@
 import { NextRequest } from "next/server"
-import { getContract } from "../lib/accounting/cycle.ts"
+import { getPDS } from "../lib/main.ts"
 
 export async function GET() {
-  let contract = getContract()
+  let PDS = getPDS()
   return new Response(
-    JSON.stringify(contract),
+    PDS,
     {status: 200, headers: {"Content-Type": "application/json"}}
   )
 }
