@@ -9,7 +9,7 @@ export const getPDS = () => {
   return PDS
 }
 
-export const getResponse = async function* (prompt: string): AsyncGenerator<string> => {
+export const getResponse = async function* (prompt: string): AsyncGenerator<string> {
   
   /*
   The safeprod mcp server is only for having a mcp server that we can test
