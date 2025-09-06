@@ -3,19 +3,16 @@ import { z } from "zod"
 
 const handler = createMcpHandler(
   (server) => {
-    server.tool(
-      "retrieve_name",
-      "Retrieve the name of the user",
-      {},
-      async ({}) => {
-        return {
-          content: [{ type: "text", text: `James`}],
-        }
-      }
-    )
+    server.tool("getDocument", "Get document", {}, getDocument)
   },
   {},
   { basePath: "/api" },
 )
+
+const getDocument = async () => {
+  return {
+    content: [{ type: "text", text: `Hello World`}],
+  }
+}
 
 export { handler as GET, handler as POST }
