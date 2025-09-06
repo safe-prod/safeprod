@@ -5,7 +5,7 @@ import { createOpenRouter } from "@openrouter/ai-sdk-provider"
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js"
 
 export const getPDS = () => {
-  let PDS = fs.readFileSync(path.join(process.cwd(), "app/lib/PDS.md"), "utf8"))
+  let PDS = fs.readFileSync(path.join(process.cwd(), "app/api/mcp/lib/PDS.md"), "utf8"))
   return PDS
 }
 
