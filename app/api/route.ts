@@ -2,21 +2,24 @@ import { streamText, MCPTransport, experimental_createMCPClient as createMCPClie
 import { createOpenRouter } from "@openrouter/ai-sdk-provider"
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js"
 import { NextRequest } from "next/server"
+/*
 import fs from "fs"
 import path from "path"
-
+*/
 export async function GET() {
-  let PDS = getPDS()
+  /* let PDS = getPDS() */
   return new Response(
-    PDS,
+    "PDS",
     {status: 200, headers: {"Content-Type": "application/json"}}
   )
 }
 
+/*
 export const getPDS = () => {
   let PDS = fs.readFileSync(path.join(process.cwd(), "app/api/PDS.md"), "utf8"))
   return PDS
 }
+*/
 
 export const getResponse = async function* (prompt: string): AsyncGenerator<string> {
   const url = new URL("https://safeprod.vercel.app/api/mcp")  
