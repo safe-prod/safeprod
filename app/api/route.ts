@@ -26,7 +26,7 @@ export const getResponse = async function* (prompt: string): AsyncGenerator<stri
   const client = await createMCPClient({transport: new StreamableHTTPClientTransport(url, { sessionId: "123" })})
   const tools = await client.tools()
   
-  const openrouter = createOpenRouter({apiKey: process.env.OPENROUTER_API_KEY}) 
+  const openrouter = createOpenRouter({apiKey: process.env.NEXT_PUBLIC_OPENROUTER_API_KEY}) 
   const result = streamText({
     model: openrouter("deepseek/deepseek-chat-v3.1:free"),
     tools: tools,
