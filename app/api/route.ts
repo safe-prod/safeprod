@@ -29,8 +29,12 @@ export const getResponse = async function* (prompt: string): AsyncGenerator<stri
   const openrouter = createOpenRouter({apiKey: "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"}) 
   const result = streamText({
     model: openrouter("deepseek/deepseek-chat-v3.1:free"),
-    prompt: prompt,
-    tools: tools
+    tools: tools,
+    messages: [
+      { role: "user", content: "Hi, can you respond like Shakespeare when you talk?" },
+      { role: 'assistant', content: "Sure, from now on, I will respond like Shakespeare when I talk." },
+      { role: 'user', content: prompt }
+    ]
   })
 
   for await (const textPart of result.textStream) {
