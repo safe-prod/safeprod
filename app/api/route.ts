@@ -7,7 +7,6 @@ import fs from "fs"
 import path from "path"
 */
 export async function GET() {
-  /* let PDS = getPDS() */
   return new Response(
     "PDS",
     {status: 200, headers: {"Content-Type": "application/json"}}
