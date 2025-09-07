@@ -1,6 +1,6 @@
-# PRODUCT DISCLOSURE STATEMENT | SAFE / {ISSUER}
+# PRODUCT DOCUMENT | SAFE / {ISSUER}
 
-**This product disclosure statement only highlights the key features and risks of this {product type} product (the “Product Disclosure Statement”). Counterparties/Users are advised to request, read and understand the Product Disclosure Statement and all other disclosure documents before deciding to transact.**
+**This product document highlights the key features and risks of this {product type} product (the “Product Documet”). Counterparties/Users are advised to request, read and understand the Product Document before deciding to transact.**
 
 **{Product Type}**
 
