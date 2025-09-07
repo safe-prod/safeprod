@@ -22,11 +22,8 @@ export default function Entrepreneur() {
       model: openrouter("deepseek/deepseek-r1-0528:free"),
       prompt: input
     })
-    // await currentOutput.consumeStream()
-    // setOutput(await currentOutput.text)
-    for await (const newOutput of currentOutput.textStream) {
-      setOutput((output) => output + newOutput)
-    }
+    await currentOutput.consumeStream()
+    setOutput(await currentOutput.text)
   }
   return (
     <div className="flex flex-col">
