@@ -23,7 +23,7 @@ export default function Entrepreneur() {
       prompt: "Hello"
     })
     await currentOutput.consumeStream()
-    setOutput(currentOutput.text)
+    setOutput(await currentOutput.text)
   }
   return (
     <div className="flex flex-col">
