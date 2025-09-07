@@ -1,7 +1,6 @@
-import { streamText, MCPTransport, experimental_createMCPClient as createMCPClient } from "ai"
+import { streamText, stepCountIs, MCPTransport, experimental_createMCPClient as createMCPClient } from "ai"
 import { createOpenRouter } from "@openrouter/ai-sdk-provider"
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js"
-import { NextRequest } from "next/server"
 
 export const getResponse = async function* (prompt: string): AsyncGenerator<string> {
   const url = new URL("https://safeprod.vercel.app/api/mcp")  
@@ -17,7 +16,7 @@ export const getResponse = async function* (prompt: string): AsyncGenerator<stri
       { role: 'assistant', content: "Hello, what can I help you with?" },
       { role: 'user', content: prompt }
     ],
-    maxSteps: 2  // Makes the tool results feed back into LLM
+    stopWhen: stepCountIs(5) // Makes the tool results feed back into LLM
   })
 
   for await (const textPart of result.textStream) {
