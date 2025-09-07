@@ -16,7 +16,8 @@ export const getResponse = async function* (prompt: string): AsyncGenerator<stri
       { role: "user", content: "Hi" },
       { role: 'assistant', content: "Hello, what can I help you with?" },
       { role: 'user', content: prompt }
-    ]
+    ],
+    maxSteps: 2  // Makes the tool results feed back into LLM
   })
 
   for await (const textPart of result.textStream) {
