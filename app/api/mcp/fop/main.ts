@@ -1,7 +1,8 @@
-import { streamText, tool, stepCountIs, MCPTransport, experimental_createMCPClient as createMCPClient } from "ai"
+/* import { streamText, tool, stepCountIs, MCPTransport, experimental_createMCPClient as createMCPClient } from "ai" */
+import { streamText } from "ai"
 import { createOpenRouter } from "@openrouter/ai-sdk-provider"
-import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js"
-import { z } from "zod"
+/* import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js" */
+/* import { z } from "zod" */
 
 export const getResponse = async function* (prompt: string): AsyncGenerator<string> {
   const openrouter = createOpenRouter({apiKey: process.env.NEXT_PUBLIC_OPENROUTER_API_KEY}) 
