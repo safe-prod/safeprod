@@ -9,7 +9,7 @@ They innovate, create new products or services, and drive economic growth by com
 
 "use client"
 import { useState } from "react"
-import { streamText } from "ai"
+import { generateText } from "ai"
 import { createOpenRouter } from "@openrouter/ai-sdk-provider"
 
 export default function Entrepreneur() {
