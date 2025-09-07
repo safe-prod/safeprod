@@ -10,7 +10,7 @@ export const getResponse = async function* (prompt: string): AsyncGenerator<stri
   
   const openrouter = createOpenRouter({apiKey: process.env.NEXT_PUBLIC_OPENROUTER_API_KEY}) 
   const result = streamText({
-    model: openrouter("deepseek/deepseek-chat-v3.1:free"),
+    model: openrouter("google/gemini-2.0-flash-exp:free"),
     tools: tools,
     messages: [
       { role: "user", content: "Hi, can you respond like Shakespeare when you talk?" },
