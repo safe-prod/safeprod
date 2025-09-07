@@ -35,7 +35,7 @@ export default function Entrepreneur() {
 }
 
 // const getOutput = async function* (input: string): AsyncGenerator<string> {
-const getOutput = async function(input: string): string {
+const getOutput = async function(input: string): Promise<string> {
   const openrouter = createOpenRouter({apiKey: process.env.NEXT_PUBLIC_OPENROUTER_API_KEY}) 
   const currentOutput = generateText({
     model: openrouter("openai/gpt-oss-120b:free"),
