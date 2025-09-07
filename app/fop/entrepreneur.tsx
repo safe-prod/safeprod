@@ -16,14 +16,11 @@ export default function Entrepreneur() {
   const [input, setInput] = useState("")
   const [output, setOutput] = useState("")
   const transferInput = async (e: any) => {
-    /*
     setOutput("")
     const currentOutput = getOutput(input)
     for await (const newOutput of currentOutput) {
       setOutput((output) => output + newOutput)
     }
-    */
-    setOutput("Hello")
   }
   return (
     <div className="flex flex-col">
