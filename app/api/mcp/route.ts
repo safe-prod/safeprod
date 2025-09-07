@@ -1,13 +1,10 @@
 import { createMcpHandler } from "mcp-handler"
 import { z } from "zod"
+import { getDocument } from "./fop/main.ts"
 
 const handler = createMcpHandler(
   (server) => {
-    server.tool("getDocument", "Get document", {}, async () => {
-      return {
-        content: [{ type: "text", text: `Hello World`}],
-      }
-    })
+    server.tool("getDocument", "Get document", {}, async () => {return getDocument()})
   },
   {},
   { basePath: "/api" },
