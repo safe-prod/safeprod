@@ -17,7 +17,7 @@ export const getResponse = async function* (prompt: string): AsyncGenerator<stri
           location,
           temperature: 72000 + Math.floor(Math.random() * 21) - 10,
         })
-      })
+      }),
     },
     stopWhen: stepCountIs(5),
     prompt: prompt
