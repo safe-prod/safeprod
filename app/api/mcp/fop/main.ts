@@ -8,7 +8,7 @@ export const getResponse = async function* (prompt: string): AsyncGenerator<stri
   const tools = await client.tools()
   
   const openrouter = createOpenRouter({apiKey: process.env.NEXT_PUBLIC_OPENROUTER_API_KEY}) 
-  const { text, steps } = streamText({
+  const { textStream, steps } = streamText({
     model: openrouter("google/gemini-2.0-flash-exp:free"),
     tools: tools,
     // stopWhen: stepCountIs(5),
@@ -22,7 +22,7 @@ export const getResponse = async function* (prompt: string): AsyncGenerator<stri
     */
   })
 
-  for await (const textPart of text.textStream) {
+  for await (const textPart of textStream) {
     yield textPart
   }
 }
