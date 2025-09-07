@@ -5,9 +5,22 @@ import { z } from "zod"
 
 export const getResponse = async function* (prompt: string): AsyncGenerator<string> {
   const openrouter = createOpenRouter({apiKey: process.env.NEXT_PUBLIC_OPENROUTER_API_KEY}) 
-  const { textStream, steps } = streamText({
+  const textStream = streamText({
     model: openrouter("google/gemini-2.0-flash-exp:free"),
-    /*
+    prompt: prompt
+  })
+  for await (const textPart of textStream) {
+    yield textPart
+  }
+}
+
+/*
+const url = new URL("https://safeprod.vercel.app/api/mcp")  
+  const client = await createMCPClient({transport: new StreamableHTTPClientTransport(url, { sessionId: "123" })})
+  const tools = await client.tools()
+*/
+
+/*
     tools: {
       weather: tool({
         description: 'Get the weather in a location',
@@ -22,7 +35,6 @@ export const getResponse = async function* (prompt: string): AsyncGenerator<stri
     },
     stopWhen: stepCountIs(5),
     */
-    prompt: prompt
     /*
     messages: [
       { role: "user", content: "Hi" },
@@ -30,15 +42,3 @@ export const getResponse = async function* (prompt: string): AsyncGenerator<stri
       { role: 'user', content: prompt }
     ]
     */
-  })
-
-  for await (const textPart of textStream) {
-    yield textPart
-  }
-}
-
-/*
-const url = new URL("https://safeprod.vercel.app/api/mcp")  
-  const client = await createMCPClient({transport: new StreamableHTTPClientTransport(url, { sessionId: "123" })})
-  const tools = await client.tools()
-*/
