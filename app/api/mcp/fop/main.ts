@@ -6,7 +6,7 @@ import { createOpenRouter } from "@openrouter/ai-sdk-provider"
 
 export const getResponse = async function* (prompt: string): AsyncGenerator<string> {
   const openrouter = createOpenRouter({apiKey: process.env.NEXT_PUBLIC_OPENROUTER_API_KEY}) 
-  const textStream = streamText({
+  const { textStream, steps } = streamText({
     model: openrouter("google/gemini-2.0-flash-exp:free"),
     prompt: prompt
   })
