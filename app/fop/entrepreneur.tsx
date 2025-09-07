@@ -20,7 +20,7 @@ export default function Entrepreneur() {
     const openrouter = createOpenRouter({apiKey: process.env.NEXT_PUBLIC_OPENROUTER_API_KEY}) 
     const currentOutput = streamText({
       model: openrouter("deepseek/deepseek-r1-0528:free"),
-      prompt: input
+      prompt: "Hello"
     })
     /*
     for await (const newOutput of currentOutput.textStream) {
