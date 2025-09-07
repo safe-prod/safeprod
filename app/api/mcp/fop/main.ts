@@ -19,7 +19,7 @@ export const getResponse = async function* (prompt: string): AsyncGenerator<stri
         }),
         execute: async ({ location }) => ({
           location,
-          temperature: 72 + Math.floor(Math.random() * 21) - 10,
+          temperature: 72000 + Math.floor(Math.random() * 21) - 10,
         })
       })
     },
