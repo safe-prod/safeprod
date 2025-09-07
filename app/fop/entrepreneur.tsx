@@ -17,10 +17,13 @@ export default function Entrepreneur() {
   const [output, setOutput] = useState("")
   const transferInput = async (e: any) => {
     setOutput("")
-    const currentOutput = getOutput(input)
+    const currentOutput = await getOutput(input)
+    setOutput(currentOutput)
+    /*
     for await (const newOutput of currentOutput) {
       setOutput((output) => output + newOutput)
     }
+    */
   }
   return (
     <div className="flex flex-col">
@@ -31,13 +34,18 @@ export default function Entrepreneur() {
   )
 }
 
-const getOutput = async function* (input: string): AsyncGenerator<string> {
+// const getOutput = async function* (input: string): AsyncGenerator<string> {
+const getOutput = async function(input: string): string {
   const openrouter = createOpenRouter({apiKey: process.env.NEXT_PUBLIC_OPENROUTER_API_KEY}) 
-  const currentOutput = streamText({
+  const currentOutput = generateText({
     model: openrouter("openai/gpt-oss-120b:free"),
     prompt: input
   })
+  await currentOutput.consumeStream()
+  return currentOutput
+  /*
   for await (const newOutput of currentOutput.textStream) {
     yield newOutput
   }
+  */
 }
