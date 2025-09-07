@@ -4,7 +4,7 @@ import { getDocument } from "./fop/main.ts"
 
 const handler = createMcpHandler(
   (server) => {
-    server.tool("getDocument", "Get document", {}, async () => {return getDocument()})
+    server.tool("getDocument", "Get document", {}, getDocument)
   },
   {},
   { basePath: "/api" },
