@@ -11,7 +11,7 @@ export const getResponse = async function* (prompt: string): AsyncGenerator<stri
   const { textStream, steps } = streamText({
     model: openrouter("google/gemini-2.0-flash-exp:free"),
     tools: tools,
-    // stopWhen: stepCountIs(5),
+    stopWhen: stepCountIs(2),
     prompt: prompt
     /*
     messages: [
