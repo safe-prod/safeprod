@@ -2,7 +2,7 @@ import { streamText, stepCountIs, MCPTransport, experimental_createMCPClient as 
 import { createOpenRouter } from "@openrouter/ai-sdk-provider"
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js"
 
-export const getResponse = async function* (prompt: string, tools): AsyncGenerator<string> {
+export const getResponse = async function* (prompt: string, tools: Record): AsyncGenerator<string> {
   const openrouter = createOpenRouter({apiKey: process.env.NEXT_PUBLIC_OPENROUTER_API_KEY}) 
   const { textStream, steps } = streamText({
     model: openrouter("google/gemini-2.0-flash-exp:free"),
