@@ -1,6 +1,5 @@
 import { createMcpHandler } from "mcp-handler"
 import { z } from "zod"
-import { getDocument } from "./fop/main.ts"
 
 const handler = createMcpHandler(
   (server) => {
