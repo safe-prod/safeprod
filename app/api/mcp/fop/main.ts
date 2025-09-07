@@ -11,12 +11,15 @@ export const getResponse = async function* (prompt: string): AsyncGenerator<stri
   const result = streamText({
     model: openrouter("google/gemini-2.0-flash-exp:free"),
     tools: tools,
+    stopWhen: stepCountIs(5),
+    prompt: prompt
+    /*
     messages: [
       { role: "user", content: "Hi" },
       { role: 'assistant', content: "Hello, what can I help you with?" },
       { role: 'user', content: prompt }
-    ],
-    stopWhen: stepCountIs(5) // Makes the tool results feed back into LLM
+    ]
+    */
   })
 
   for await (const textPart of result.textStream) {
