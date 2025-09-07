@@ -16,10 +16,10 @@ export default function Entrepreneur() {
   const [input, setInput] = useState("")
   const [output, setOutput] = useState("")
   const transferInput = async (e: any) => {
-    setOutput("")
+    setOutput(`This is the input: {input}`)
     const openrouter = createOpenRouter({apiKey: process.env.NEXT_PUBLIC_OPENROUTER_API_KEY}) 
     const currentOutput = streamText({
-      model: openrouter("openai/gpt-oss-120b:free"),
+      model: openrouter("deepseek/deepseek-r1-0528:free"),
       prompt: input
     })
     for await (const newOutput of currentOutput.textStream) {
