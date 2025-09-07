@@ -23,3 +23,9 @@ export const getResponse = async function* (prompt: string): AsyncGenerator<stri
     yield textPart
   }
 }
+
+export const getDocument = async () => {
+  return {
+    content: [{ type: "text", text: `This document describes the specifications of the new product.`}],
+  }
+}
