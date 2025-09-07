@@ -4,12 +4,19 @@ import { getDocument } from "./fop/main.ts"
 
 const handler = createMcpHandler(
   (server) => {
-    // server.tool("getDocument", "Get document", {}, getDocument)
-    server.tool("getDocument", "Get document", {}, async () => {
-      return {
-        content: [{ type: "text", text: `This document describes the specifications of the new product.`}],
+    server.tool(
+      "roll_dice",
+      "Rolls an N-sided die",
+      {
+        sides: z.number().int().min(2),
+      },
+      async ({ sides }) => {
+        const value = 1 + Math.floor(Math.random() * sides)
+        return {
+          content: [{ type: "text", text: `🎲 You rolled a ${value}!` }],
+        }
       }
-    })
+    )
   },
   {},
   { basePath: "/api" },
