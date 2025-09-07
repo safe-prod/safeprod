@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react"
 import { getResponse } from "./api/mcp/fop/main.ts"
+import { tools } from "./api/mcp/fop/test.ts"
 
 export default function Page() {
   const [prompt, setPrompt] = useState("")
@@ -12,7 +13,7 @@ export default function Page() {
     setResponse("") // Clear previous response
     setLoading(true)
 
-    const responseGenerator = getResponse(prompt)
+    const responseGenerator = getResponse(prompt, tools)
     for await (const textPart of responseGenerator) {
       setResponse((prev) => prev + textPart) // Append new textPart to the response
     }
