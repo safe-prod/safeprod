@@ -7,6 +7,7 @@ export const getResponse = async function* (prompt: string): AsyncGenerator<stri
   const openrouter = createOpenRouter({apiKey: process.env.NEXT_PUBLIC_OPENROUTER_API_KEY}) 
   const { textStream, steps } = streamText({
     model: openrouter("google/gemini-2.0-flash-exp:free"),
+    /*
     tools: {
       weather: tool({
         description: 'Get the weather in a location',
@@ -20,6 +21,7 @@ export const getResponse = async function* (prompt: string): AsyncGenerator<stri
       }),
     },
     stopWhen: stepCountIs(5),
+    */
     prompt: prompt
     /*
     messages: [
