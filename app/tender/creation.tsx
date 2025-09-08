@@ -8,7 +8,7 @@ export default async function TenderCreation() {
   const [output, setOutput] = useState("")
   return (
     <div className="flex flex-col">
-      <textarea value={input} onChange={(e) => {setInput(e.target.value)}} />
+      <textarea value={input} onChange={(e) => setInput(e.target.value)} />
       <div
         onClick={async () => {
           const result = streamText({
