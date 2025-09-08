@@ -21,7 +21,7 @@ export default async function TenderCreation() {
       >
         Create
       </div>
-      {text}
+      {output}
     </div>
   )
 }
