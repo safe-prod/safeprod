@@ -1,11 +1,10 @@
 "use client"
-import { useState } from "react"
-import Entrepreneur from "./fop/entrepreneur"
+import Test from "./fop/test"
 
 export default function Page() {
   return (
     <div>
-      <Entrepreneur />
+      <Test />
     </div>
   )
 }
