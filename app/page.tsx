@@ -1,10 +1,10 @@
 "use client"
-import Test from "./fop/test"
+import TenderCreation from "./tender/creation"
 
 export default function Page() {
   return (
     <div>
-      <Test />
+      <TenderCreation />
     </div>
   )
 }
