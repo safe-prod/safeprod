@@ -7,14 +7,13 @@ export const metadata: Metadata = {
   description: "Superintelligence Alignment through Financial Engineering." 
 }
 
-const font = localFont({
-  src: [
-    {path: "./style/regular.woff2", weight: "400"},
-    {path: "./style/bold.woff2", weight: "700"}
-  ]
-})
-
 export default function Layout({children}: {children: React.ReactNode}) {
+  const font = localFont({
+    src: [
+      {path: "./style/regular.woff2", weight: "400"},
+      {path: "./style/bold.woff2", weight: "700"}
+    ]
+  })
   return (
     <html lang="en" className={font.className}>
       <head>
