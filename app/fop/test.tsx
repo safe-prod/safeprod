@@ -4,8 +4,8 @@ import "dotenv/config"
 
 export default async function Test() {
   const result = streamText({
-    model: "openai/gpt-4.1",
-    prompt: "Invent a new holiday and describe its traditions.",
+    model: "meta/llama-3.1-8b",
+    prompt: "Hello",
   });
 
   await result.consumeStream()
