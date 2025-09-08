@@ -16,7 +16,7 @@ export default async function TenderCreation() {
   }
   return (
     <div className="flex flex-col">
-      <textarea value={input} onChange={(e) => setInput(e.target.value)} />
+      <input value={input} onChange={e => setInput(e.target.value)} />
       <button onClick={create}>Create</button>
       {output}
     </div>
