@@ -10,7 +10,7 @@ export default async function TenderCreation() {
     <div className="flex flex-col">
       <textarea value={input} onChange={(e) => {setInput(e.target.value)}} />
       <div
-        onClick={() => {
+        onClick={async () => {
           const result = streamText({
             model: "meta/llama-3.1-8b",
             prompt: input
