@@ -7,10 +7,8 @@ export default async function Test() {
     model: "meta/llama-3.1-8b",
     prompt: "Hello",
   });
-
   await result.consumeStream()
   const text = await result.text
-
   return (
     <div>{text}</div>
   )
