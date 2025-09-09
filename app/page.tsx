@@ -6,7 +6,7 @@ export default function Page() {
     <div className="flex flex-col">
       <div className="scroll-smooth">
       {items.map((_, index) => (
-        <div key={index} className="p-2 mb-2 rounded-sm flex flex-col border border-gray-100">
+        <div key={index} className="p-2 flex flex-col border-b border-gray-100">
           <div className="mb-2 flex flex-row grow font-bold text-xl">
             <div className="text-black grow">Investor</div>
             <div className="text-red-900 grow text-right">$1,500</div>
