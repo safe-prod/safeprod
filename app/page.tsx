@@ -13,20 +13,20 @@ export default function Page() {
           </div>
           <div className="flex flex-row grow font-bold text-sm text-black">
             <div className="grow-8">Sep 27, 5:03PM</div>
-            <div className="rounded-2xl grow-2 max-w-24 text-center border border-red-900">Equity</div>
+            <div className="grow-2 max-w-24 text-right">Equity</div>
           </div>
         </div>
       ))}
       </div>
-      <div className="fixed bottom-0 flex flex-col left-2 right-2">
-        <div className="backdrop-blur-sm bg-gray-50/50 p-2 rounded-lg flex flex-col border border-gray-300">
+      <div className="fixed bottom-0 flex flex-col left-0 right-0">
+        <div className="backdrop-blur-sm bg-gray-50/50 p-2 ml-2 mr-2 rounded-lg flex flex-col border border-gray-300">
           <div className="mb-2 flex flex-row grow font-bold text-xl">
-            <input className="text-red-950 border-b border-red-900 grow" value="Investor" />
-            <input className="text-red-800 border-b border-red-900 grow text-right" value="$" />
+            <input type="text" className="text-red-950 border-b ml-2 border-red-900 grow" value="Investor" />
+            <input type="text" className="text-red-800 border-b border-red-900 grow text-right" value="$" />
           </div>
           <div className="flex flex-row grow font-bold text-sm text-black">
             <div className="grow-8">Sep 27, 5:03PM</div>
-            <div className="rounded-2xl grow-2 max-w-24 text-center border border-red-900">Equity</div>
+            <div className="grow-2 max-w-24 text-right">Equity</div>
           </div>
         </div>
       </div>
