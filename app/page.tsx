@@ -33,8 +33,8 @@ export default function Page() {
       <div className="fixed bottom-0 flex flex-col left-0 right-0 ml-2 mr-2">
         <div className="backdrop-blur-md bg-white/50 p-2 flex flex-col border-t border-gray-200">
           <div className="mb-2 flex flex-row grow font-bold text-xl">
-            <input type="text" className="w-1/2 text-black border-b mr-2 border-black focus:border-b focus:border-black" placeholder="Investor" />
-            <input type="text" className="w-1/2 text-red-900 border-b border-red-900 focus:border-b focus:border-red-900 text-right" placeholder="$" />
+            <input type="text" className="w-1/2 text-black border-b mr-2 border-black focus:outline-none focus:border-b focus:border-black" placeholder="Investor" />
+            <input type="text" className="w-1/2 text-red-900 border-b border-red-900 focus:outline-none focus:border-b focus:border-red-900 text-right" placeholder="$" />
           </div>
           <div className="flex flex-row grow font-bold text-sm text-gray-900">
             <div className="grow-8">Sep 27, 5:03PM</div>
