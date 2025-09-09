@@ -21,8 +21,8 @@ export default function Page() {
       <div className="fixed bottom-0 flex flex-col left-2 right-2">
         <div className="backdrop-blur-sm bg-gray-50/50 p-2 rounded-lg flex flex-col border border-gray-300">
           <div className="mb-2 flex flex-row grow font-bold text-xl">
-            <input className="text-red-950 border-b border-red-900 grow">Investor</input>
-            <input className="text-red-800 border-b border-red-900 grow text-right">$</input>
+            <input className="text-red-950 border-b border-red-900 grow" value="Investor" />
+            <input className="text-red-800 border-b border-red-900 grow text-right" value="$" />
           </div>
           <div className="flex flex-row grow font-bold text-sm text-black">
             <div className="grow-8">Sep 27, 5:03PM</div>
