@@ -4,7 +4,6 @@ export default function Page() {
   const items = Array.from({ length: 20 })
   return (
     <div className="flex flex-col">
-      <div className="mt-4 mb-4 text-gray-300 text-5xl font-bold">Welcome</div>
       <div className="scroll-smooth">
       {items.map((_, index) => (
         <div key={index} className="p-2 mb-2 rounded-lg flex flex-col border border-gray-300">
@@ -30,6 +29,7 @@ export default function Page() {
             <div className="rounded-2xl grow-2 max-w-24 text-center border border-red-900">Equity</div>
           </div>
         </div>
+        <div className="mb-px bg-gray-100">&nbsp;</div>
       </div>
     </div>
   )
