@@ -16,7 +16,7 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <div className="scroll-smooth snap-ysnap-mandatory">
+      <div className="scroll-smooth snap-y snap-mandatory">
       {items.map((_, index) => (
         <div key={index} className="snap-end p-2 flex flex-col border-b border-gray-200">
           <div className="mb-2 flex flex-row grow font-bold text-xl">
