@@ -1,11 +1,11 @@
-import "./style/globals.css"
+import "./globals.css"
 import localFont from "next/font/local"
 import type { Metadata } from "next"
 
 const font = localFont({
   src: [
-    {path: "./style/regular.woff2", weight: "400"},
-    {path: "./style/bold.woff2", weight: "700"}
+    {path: "./regular.woff2", weight: "400"},
+    {path: "./bold.woff2", weight: "700"}
   ]
 })
 
@@ -18,7 +18,7 @@ export default function Layout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className={font.className}>
       <head>
-        <link rel="icon" type="image/png" sizes="96x96" href="/style/icon.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/icon.png" />
       </head>
       <body>
         {children}
