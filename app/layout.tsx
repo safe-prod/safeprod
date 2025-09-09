@@ -20,7 +20,7 @@ export default function Layout({children}: {children: React.ReactNode}) {
       <head>
         <link rel="icon" type="image/png" sizes="96x96" href="/icon.png" />
       </head>
-      <body>
+      <body className="m-4 flex flex-col bg-gray-200">
         {children}
       </body>
     </html>
