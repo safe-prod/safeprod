@@ -7,7 +7,7 @@ export default function Page() {
       <div className="mt-4 mb-4 text-red-900 text-5xl font-bold">Welcome</div>
       <div className="scroll-smooth">
       {items.map((_, index) => (
-        <div key={index} className="p-2 mb-2 rounded-lg flex flex-col border border-red-900">
+        <div key={index} className="p-2 mb-2 rounded-lg flex flex-col border border-gray-300">
           <div className="mb-2 flex flex-row grow font-bold text-xl">
             <div className="text-red-950 grow">Investor</div>
             <div className="text-red-800 grow text-right">$1,500</div>
@@ -19,7 +19,7 @@ export default function Page() {
         </div>
       ))}
       </div>
-      <div className="fixed bottom-0 left-0 right-0">
+      <div className="fixed bottom-0 flex flex-col left-0 right-0">
         <textarea className="backdrop-blur-sm border rounded-sm border-red-900 p-2 bg-gray-50/50 text-red-900 caret-red-900 text-base font-bold" placeholder="Ask anything" />
         <div className="bg-gray-100 pb-2">&nbsp;</div>
       </div>
