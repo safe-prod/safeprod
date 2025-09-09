@@ -1,6 +1,7 @@
 "use client"
 
 export default function Page() {
+  const items = Array.from({ length: 10 })
   return (
     <div className="flex flex-col">
       <div className="mt-4 mb-8 text-red-900 text-5xl font-bold">Welcome</div>
