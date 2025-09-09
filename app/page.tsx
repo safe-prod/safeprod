@@ -10,15 +10,19 @@ export default function Page() {
           <div className="text-red-900 grow">Grocery Store</div>
           <div className="text-red-800 grow text-right">($100)</div>
         </div>
-        <div className="rounded-2xl max-w-24 text-sm bg-gray-100 text-red-700">Money</div>
+        <div className="rounded-2xl max-w-24 text-center font-bold text-sm bg-gray-100 text-red-700">Money</div>
       </div>
       <div className="p-2 mb-2 rounded-lg flex flex-col bg-gray-200">
         <div className="flex flex-row grow font-bold text-xl">
           <div className="text-red-900 grow">Investor</div>
           <div className="text-red-800 grow text-right">$1,500</div>
         </div>
-        <div className="rounded-2xl max-w-24 text-sm bg-gray-100 text-red-700">Equity</div>
+        <div className="rounded-2xl max-w-24 text-center font-bold text-sm bg-gray-100 text-red-700">Equity</div>
       </div>
+      <div className="fixed bottom-5 right-5 bg-red-900 text-white rounded-xl p-4 shadow-lg">
+        +
+      </div>
+    </div>
     </div>
   )
 }
