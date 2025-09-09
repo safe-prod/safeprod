@@ -19,7 +19,7 @@ export default function Page() {
         </div>
       ))}
       </div>
-      <div className="fixed bottom-0 right-0">
+      <div className="fixed bottom-0 left-0 right-0">
         <textarea className="backdrop-blur-sm border rounded-sm border-red-900 p-2 bg-gray-50/50 text-red-900 caret-red-900 text-base font-bold" placeholder="Ask anything" />
         <div className="bg-gray-100 pb-2">&nbsp;</div>
       </div>
