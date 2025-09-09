@@ -19,5 +19,6 @@ export default function Page() {
         </div>
         <div className="rounded-2xl max-w-24 text-sm bg-gray-100 text-red-700">Equity</div>
       </div>
+    </div>
   )
 }
