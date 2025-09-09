@@ -4,11 +4,7 @@ export default function Page() {
   const items = Array.from({ length: 20 })
   return (
     <div className="flex flex-col">
-      <div className="mt-4 mb-8 text-red-900 text-5xl font-bold">Welcome</div>
-      <div className="sticky top-0 flex flex-col bg-gray-100">
-        <div className="mb-2 bg-gray-100">&nbsp;</div>
-        <input className="backdrop-blur-sm mb-4 border-b border-red-900 p-2 bg-gray-50/50 text-red-900 caret-red-900 text-3xl font-bold" placeholder="Search" />
-      </div>
+      <div className="mt-4 mb-4 text-red-900 text-5xl font-bold">Welcome</div>
       <div className="scroll-smooth">
       {items.map((_, index) => (
         <div key={index} className="p-2 mb-2 rounded-lg flex flex-col border border-red-900">
@@ -23,8 +19,9 @@ export default function Page() {
         </div>
       ))}
       </div>
-      <div className="fixed bottom-4 right-4 bg-white/50 backdrop-blur-sm text-red-900 border-red-900 border font-bold text-xl rounded-xl p-4">
-        &nbsp;+&nbsp;
+      <div className="fixed bottom-0 flex flex-col">
+        <textarea className="backdrop-blur-sm mb-4 border rounded-sm border-red-900 p-2 bg-gray-50/50 text-red-900 caret-red-900 text-3xl font-bold" placeholder="Ask anything" />
+        <div className="mt-2 bg-gray-100">&nbsp;</div>
       </div>
     </div>
   )
