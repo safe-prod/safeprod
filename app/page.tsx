@@ -36,12 +36,12 @@ export default function Page() {
   return (
     <div className="flex flex-col">
       <div className="sticky top-0 flex flex-col left-0 right-0">
-        <div className="backdrop-blur-md bg-white/50 p-2 flex flex-row border-b border-gray-200 font-bold text-base">
+        <div className="backdrop-blur-md bg-white/50 p-2 flex flex-col border-b border-gray-100">
           <div className="mb-2 flex flex-row grow font-bold text-lg">
             <div className="text-black grow">Initial</div>
             <div className="text-red-900 grow text-right">$250,000</div>
           </div>
-          <div className="flex flex-row grow font-bold text-sm text-gray-400">
+          <div className="flex flex-row grow font-bold text-sm text-gray-600">
             <div className="w-1/2">Sep 12, 8:57PM</div>
             <div className="w-1/2 text-right">SAFE</div>
           </div>
@@ -49,12 +49,12 @@ export default function Page() {
       </div>
       <div className="scroll-smooth snap-y snap-mandatory">
         {items.map((item, index) => (
-          <div key={index} className="snap-end p-2 flex flex-col border-b border-gray-200">
+          <div key={index} className="snap-end p-2 flex flex-col border-b border-gray-100">
             <div className="mb-2 flex flex-row grow font-bold text-lg">
               <div className="text-black grow">{item.investor}</div>
               <div className="text-red-900 grow text-right">{item.amount}</div>
             </div>
-            <div className="flex flex-row grow font-bold text-sm text-gray-400">
+            <div className="flex flex-row grow font-bold text-sm text-gray-600">
               <div className="w-1/2">{item.date}</div>
               <div className="w-1/2 text-right">{item.type}</div>
             </div>
@@ -62,12 +62,12 @@ export default function Page() {
         ))}
       </div>
       <div className="fixed bottom-0 flex flex-col left-0 right-0">
-        <div className="backdrop-blur-md bg-white/50 p-2 flex flex-col border-t border-gray-200">
+        <div className="backdrop-blur-md bg-white/50 p-2 flex flex-col border-t border-gray-100">
           <div className="mb-2 flex flex-row grow font-bold text-lg">
             <input type="text" className="w-1/2 text-black mr-2 focus:outline-none" placeholder="Investor" />
             <input type="text" className="w-1/2 text-red-900 focus:outline-none text-right" placeholder="$" />
           </div>
-          <div className="flex flex-row grow font-bold text-sm text-gray-400">
+          <div className="flex flex-row grow font-bold text-sm text-gray-600">
             <input type="text" className="w-1/2 mr-2 focus:outline-none" placeholder="Sep 27, 5:03PM" />
             <input type="text" className="w-1/2 focus:outline-none text-right" placeholder="Equity" />
           </div>
