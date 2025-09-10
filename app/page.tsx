@@ -36,11 +36,11 @@ export default function Page() {
   return (
     <div className="flex flex-col">
       <div className="sticky top-0 flex flex-col left-0 right-0">
-        <div className="backdrop-blur-md bg-white/50 p-2 flex flex-row border-b border-gray-400 font-bold text-sm">
-          <div className="w-1/4 text-black">Initial</div>
-          <div className="w-1/4 text-red-900 grow text-right">$250,000</div>
-          <div className="w-1/4 text-gray-900">Sep 10, 8:34PM</div>
-          <div className="w-1/4 text-gray-900 text-right">SAFE</div>
+        <div className="backdrop-blur-md bg-white/50 p-2 flex flex-row border-b border-gray-400 font-bold text-base">
+          <div className="w-1/4 mr-px text-black">Initial</div>
+          <div className="w-1/4 mr-px text-red-900 grow text-center">$250,000</div>
+          <div className="w-1/4 mr-px text-gray-900 text-center">SAFE</div>
+          <div className="w-1/4 text-gray-900 text-right">Sep 10, 8:34PM</div>
         </div>
       </div>
       <div className="scroll-smooth snap-y snap-mandatory">
