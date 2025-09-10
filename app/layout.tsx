@@ -2,11 +2,11 @@
 
 # Finance
 
-Historically, finance was derived from Middle English finaunce, from Anglo-Norman, Middle French finance, from finer (“to pay ransom”)
-(whence also English fine (“to pay a penalty”)), from *fin (“end”)*, from Latin fīnis. Original English sense that appeared c. 1400 was “ending”.
-The sense of *ending or satisfying a debt* originated from French influence.
+Meaning:
 
-Currently, finance is defined as the management of money and other assets.
+- Derived from Middle English finaunce, from finer (“to pay ransom”), from English fine (“to pay a penalty”)), from *fin (“end”)*, from Latin fīnis.
+- Original English sense that appeared c. 1400 was “ending”. The sense of *ending or satisfying a debt* originated from French influence.
+- The management of money and other assets.
 
 ***/
 
