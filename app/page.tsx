@@ -55,39 +55,39 @@ let style = {
 export default function page() {
   const [payments, setPayments] = useState(paymentsData)
   return (
-    <div className=`${style.payments}`>
-      <div className=`${style.initial} ${style.payment}`>
-        <div className=`${style.firstRow}`>
-          <div className=`${style.counterparty}`>Initial</div>
-          <div className=`${style.product}`>SAFE</div>
+    <div className={`${style.payments}`}>
+      <div className={`${style.initial} ${style.payment}`}>
+        <div className={`${style.firstRow}`}>
+          <div className={`${style.counterparty}`}>Initial</div>
+          <div className={`${style.product}`}>SAFE</div>
         </div>
-        <div className=`${style.secondRow}`>
-          <div className=`${style.amount}`>$250,000</div>
-          <div className=`${style.date}`>Sep 12, 8:57PM</div>
+        <div className={`${style.secondRow}`}>
+          <div className={`${style.amount}`}>$250,000</div>
+          <div className={`${style.date}`}>Sep 12, 8:57PM</div>
         </div>
       </div>
       <div>
         {items.map((item, index) => (
-          <div key={index} className=`${style.payment}`>
-            <div className=`${style.firstRow}`>
-              <div className=`${style.counterparty}`>{item.counterparty}</div>
-              <div className=`${style.product}`>{item.product}</div>
+          <div key={index} className={`${style.payment}`}>
+            <div className={`${style.firstRow}`}>
+              <div className={`${style.counterparty}`}>{item.counterparty}</div>
+              <div className={`${style.product}`}>{item.product}</div>
             </div>
-            <div className=`${style.secondRow}`>
-              <div className=`${style.amount}`>{item.amount}</div>
-              <div className=`${style.date}`>{item.date}</div>
+            <div className={`${style.secondRow}`}>
+              <div className={`${style.amount}`}>{item.amount}</div>
+              <div className={`${style.date}`}>{item.date}</div>
             </div>
           </div>
         ))}
       </div>
-      <div className=`${style.new} ${style.payment}`>
-        <div className=`${style.firstRow}`>
-          <input type="text" onChange={e => setPayments(searchCounterparty(e.target.value))} className=`${style.counterparty} ${style.input}` placeholder="Investor" />
-          <input type="text" onChange={e => setPayments(searchProduct(e.target.value))} className=`${style.product} ${style.input}` placeholder="Equity" />
+      <div className={`${style.new} ${style.payment}`}>
+        <div className={`${style.firstRow}`}>
+          <input type="text" onChange={e => setPayments(searchCounterparty(e.target.value))} className={`${style.counterparty} ${style.input}`} placeholder="Investor" />
+          <input type="text" onChange={e => setPayments(searchProduct(e.target.value))} className={`${style.product} ${style.input}`} placeholder="Equity" />
         </div>
-        <div className=`${style.secondRow}`>
-          <input type="text" onChange={e => setPayments(searchAmount(e.target.value))} className=`${style.amount} ${style.input}` placeholder="$" />
-          <input type="text" onChange={e => setPayments(searchDate(e.target.value))} className=`${style.date} ${style.input}` placeholder="Sep 27, 5:03PM" />
+        <div className={`${style.secondRow}`}>
+          <input type="text" onChange={e => setPayments(searchAmount(e.target.value))} className={`${style.amount} ${style.input}`} placeholder="$" />
+          <input type="text" onChange={e => setPayments(searchDate(e.target.value))} className={`${style.date} ${style.input}`} placeholder="Sep 27, 5:03PM" />
         </div>
       </div>
     </div>
