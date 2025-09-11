@@ -18,6 +18,7 @@ Tender meaning:
 
 "use client"
 import { useState } from "react"
+import Link from "next/link"
 
 let paymentsData = [
   { counterparty: "Investor", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
@@ -45,10 +46,10 @@ let style = {
   new: "fixed bottom-0 left-0 right-0 border-t backdrop-blur-md bg-white/50",
   firstRow: "mb-2 flex flex-row",
   secondRow: "flex flex-row",
-  counterparty: "w-1/2 h-full align-middle mr-2 text-lg text-black",
-  product: "w-1/2 h-full align-middle text-right text-sm text-gray-600",
-  amount: "w-1/2 h-full align-middle mr-2 text-lg text-red-900",
-  date: "w-1/2 h-full align-middle text-right text-sm text-gray-600",
+  counterparty: "w-1/2 mr-2 text-lg text-black",
+  product: "w-1/2 text-right text-sm text-gray-600",
+  amount: "w-1/2 mr-2 text-lg text-red-900",
+  date: "w-1/2 text-right text-sm text-gray-600",
   input: "focus:outline-none"
 }
 
@@ -56,7 +57,7 @@ export default function page() {
   const [payments, setPayments] = useState(paymentsData)
   return (
     <div className={`${style.payments}`}>
-      <div className={`${style.initial} ${style.payment}`}>
+      <Link href="/about" className={`${style.initial} ${style.payment}`}>
         <div className={`${style.firstRow}`}>
           <div className={`${style.counterparty}`}>Initial</div>
           <div className={`${style.product}`}>SAFE</div>
@@ -65,7 +66,7 @@ export default function page() {
           <div className={`${style.amount}`}>$250,000</div>
           <div className={`${style.date}`}>Sep 12, 8:57PM</div>
         </div>
-      </div>
+      </Link>
       <div>
         {payments.map((payment, index) => (
           <div key={index} className={`${style.payment}`}>
