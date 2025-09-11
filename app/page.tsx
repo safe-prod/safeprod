@@ -67,15 +67,15 @@ export default function page() {
         </div>
       </div>
       <div>
-        {items.map((item, index) => (
+        {payments.map((payment, index) => (
           <div key={index} className={`${style.payment}`}>
             <div className={`${style.firstRow}`}>
-              <div className={`${style.counterparty}`}>{item.counterparty}</div>
-              <div className={`${style.product}`}>{item.product}</div>
+              <div className={`${style.counterparty}`}>{payment.counterparty}</div>
+              <div className={`${style.product}`}>{payment.product}</div>
             </div>
             <div className={`${style.secondRow}`}>
-              <div className={`${style.amount}`}>{item.amount}</div>
-              <div className={`${style.date}`}>{item.date}</div>
+              <div className={`${style.amount}`}>{payment.amount}</div>
+              <div className={`${style.date}`}>{payment.date}</div>
             </div>
           </div>
         ))}
