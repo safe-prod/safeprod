@@ -19,7 +19,7 @@ Tender meaning:
 "use client"
 import { useState } from "react"
 
-const itemsData = [
+let itemsData = [
   { counterparty: "Investor", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
   { counterparty: "Grocery Store", amount: "$98", date: "Sep 28, 5:03PM", product: "Money" },
   { counterparty: "Restaurant", amount: "$100", date: "Sep 27, 12:33PM", product: "Money" },
@@ -38,20 +38,29 @@ const itemsData = [
   { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" }
 ]
 
+let style = {
+  container: "flex flex-col bg-white",
+  initial: "sticky top-0 flex flex-col left-0 right-0 backdrop-blur-md bg-white/50 p-2 flex flex-col border-b border-gray-100 font-bold",
+  firstRow: "mb-2 flex flex-row",
+  secondRow: "flex flex-row",
+  counterparty: "w-1/2 text-lg text-black",
+  product: "w-1/2 text-right text-sm text-gray-600",
+  amount: "w-1/2 text-lg text-red-900",
+  date: "w-1/2 text-right text-sm text-gray-600"
+}
+
 export default function page() {
   const [items, setItems] = useState(itemsData)
   return (
-    <div className="flex flex-col bg-white">
-      <div className="sticky top-0 flex flex-col left-0 right-0">
-        <div className="backdrop-blur-md bg-white/50 p-2 flex flex-col border-b border-gray-100 font-bold">
-          <div className="mb-2 flex flex-row">
-            <div className="w-1/2 text-black text-lg">Initial</div>
-            <div className="w-1/2 text-sm text-gray-600 text-right">SAFE</div>
-          </div>
-          <div className="flex flex-row">
-            <div className="w-1/2 text-red-900 grow text-lg text-right">$250,000</div>
-            <div className="w-1/2 text-sm text-gray-600">Sep 12, 8:57PM</div>
-          </div>
+    <div className={style.container}>
+      <div className={style.initial}>
+        <div className={style.firstRow}>
+          <div className={style.counterparty}>Initial</div>
+          <div className={style.product}>SAFE</div>
+        </div>
+        <div className={style.secondRow}>
+          <div className={style.amount}>$250,000</div>
+          <div className={style.date}>Sep 12, 8:57PM</div>
         </div>
       </div>
       <div className="scroll-smooth snap-y snap-mandatory">
@@ -68,16 +77,14 @@ export default function page() {
           </div>
         ))}
       </div>
-      <div className="fixed bottom-0 flex flex-col left-0 right-0">
-        <div className="backdrop-blur-md bg-white/50 p-2 flex flex-col border-t border-gray-100">
-          <div className="mb-2 flex flex-row grow font-bold text-lg">
-            <input type="text" onChange={e => setItems(searchCounterparty(e.target.value))} className="w-1/2 text-black mr-2 focus:outline-none" placeholder="Investor" />
-            <input type="text" onChange={e => setItems(searchAmount(e.target.value))} className="w-1/2 text-red-900 focus:outline-none text-right" placeholder="$" />
-          </div>
-          <div className="flex flex-row grow font-bold text-sm text-gray-600">
-            <input type="text" onChange={e => setItems(searchDate(e.target.value))} className="w-1/2 mr-2 focus:outline-none" placeholder="Sep 27, 5:03PM" />
-            <input type="text" onChange={e => setItems(searchProduct(e.target.value))} className="w-1/2 focus:outline-none text-right" placeholder="Equity" />
-          </div>
+      <div className="fixed bottom-0 flex flex-col left-0 right-0 backdrop-blur-md bg-white/50 p-2 flex flex-col border-t border-gray-100">
+        <div className="mb-2 flex flex-row grow font-bold text-lg">
+          <input type="text" onChange={e => setItems(searchCounterparty(e.target.value))} className="w-1/2 text-black mr-2 focus:outline-none" placeholder="Investor" />
+          <input type="text" onChange={e => setItems(searchAmount(e.target.value))} className="w-1/2 text-red-900 focus:outline-none text-right" placeholder="$" />
+        </div>
+        <div className="flex flex-row grow font-bold text-sm text-gray-600">
+          <input type="text" onChange={e => setItems(searchDate(e.target.value))} className="w-1/2 mr-2 focus:outline-none" placeholder="Sep 27, 5:03PM" />
+          <input type="text" onChange={e => setItems(searchProduct(e.target.value))} className="w-1/2 focus:outline-none text-right" placeholder="Equity" />
         </div>
       </div>
     </div>
