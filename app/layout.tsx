@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   description: "Superintelligence Alignment through Financial Engineering." 
 }
 
-export default function Layout({children}: {children: React.ReactNode}) {
+export default function layout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className={font.className}>
       <head>
