@@ -21,7 +21,7 @@ import { useState } from "react"
 
 const itemsData = [
   { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
-  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
+  { counterparty: "Grocery Store", amount: "$2,500", date: "Sep 27, 5:03PM", product: "Equity" },
   { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
   { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
   { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
@@ -71,7 +71,7 @@ export default function page() {
       <div className="fixed bottom-0 flex flex-col left-0 right-0">
         <div className="backdrop-blur-md bg-white/50 p-2 flex flex-col border-t border-gray-100">
           <div className="mb-2 flex flex-row grow font-bold text-lg">
-            <input type="text" className="w-1/2 text-black mr-2 focus:outline-none" placeholder="Investor" />
+            <input type="text" onChange={e => setItems(searchCounterparty(e.target.value)} className="w-1/2 text-black mr-2 focus:outline-none" placeholder="Investor" />
             <input type="text" className="w-1/2 text-red-900 focus:outline-none text-right" placeholder="$" />
           </div>
           <div className="flex flex-row grow font-bold text-sm text-gray-600">
@@ -82,6 +82,10 @@ export default function page() {
       </div>
     </div>
   )
+}
+
+function searchCounterparty(search: any): any {
+  return itemsData.filter(item => item.counterparty.startsWith(search))
 }
 
 /**
