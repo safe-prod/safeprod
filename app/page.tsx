@@ -18,7 +18,6 @@ Tender meaning:
 
 "use client"
 import { useState } from "react"
-import Link from "next/link"
 
 let paymentsData = [
   { counterparty: "Investor", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
@@ -57,7 +56,7 @@ export default function page() {
   const [payments, setPayments] = useState(paymentsData)
   return (
     <div className={`${style.payments}`}>
-      <Link href="/about" className={`${style.initial} ${style.payment}`}>
+      <div href="/about" className={`${style.initial} ${style.payment}`}>
         <div className={`${style.firstRow}`}>
           <div className={`${style.counterparty}`}>Initial</div>
           <div className={`${style.product}`}>SAFE</div>
@@ -66,7 +65,7 @@ export default function page() {
           <div className={`${style.amount}`}>$250,000</div>
           <div className={`${style.date}`}>Sep 12, 8:57PM</div>
         </div>
-      </Link>
+      </div>
       <div>
         {payments.map((payment, index) => (
           <div key={index} className={`${style.payment}`}>
