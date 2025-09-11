@@ -1,5 +1,3 @@
-"use client"
-
 /***
 
 # Payment
@@ -18,23 +16,32 @@ Tender meaning:
 
 ***/
 
-export default function Page() {
-  const items = [
-    { investor: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", type: "Equity" },
-    { investor: "Investor 2", amount: "$2,000", date: "Sep 28, 6:00PM", type: "Debt" },
-    { investor: "Investor 3", amount: "$1,800", date: "Sep 29, 7:15PM", type: "Equity" },
-    { investor: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", type: "Equity" },
-    { investor: "Investor 2", amount: "$2,000", date: "Sep 28, 6:00PM", type: "Debt" },
-    { investor: "Investor 3", amount: "$1,800", date: "Sep 29, 7:15PM", type: "Equity" },
-    { investor: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", type: "Equity" },
-    { investor: "Investor 2", amount: "$2,000", date: "Sep 28, 6:00PM", type: "Debt" },
-    { investor: "Investor 3", amount: "$1,800", date: "Sep 29, 7:15PM", type: "Equity" },
-    { investor: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", type: "Equity" },
-    { investor: "Investor 2", amount: "$2,000", date: "Sep 28, 6:00PM", type: "Debt" },
-    { investor: "Investor 3", amount: "$1,800", date: "Sep 29, 7:15PM", type: "Equity" }
-  ]
+"use client"
+import { useState } from "react"
+
+const itemsData = [
+  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
+  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
+  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
+  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
+  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
+  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
+  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
+  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
+  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
+  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
+  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
+  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
+  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
+  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
+  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
+  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" }
+]
+
+export default function page() {
+  const [items, setItems] = useState(itemsData)
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-white">
       <div className="sticky top-0 flex flex-col left-0 right-0">
         <div className="backdrop-blur-md bg-white/50 p-2 flex flex-col border-b border-gray-100">
           <div className="mb-2 flex flex-row grow font-bold text-lg">
@@ -75,4 +82,14 @@ export default function Page() {
       </div>
     </div>
   )
+}
+
+/**
+
+## Fixed Income
+
+**/
+
+async function fixedIncome() {
+  return ""
 }
