@@ -40,7 +40,7 @@ let paymentsData = [
 
 let style = {
   payments: "flex flex-col scroll-smooth snap-y snap-mandatory bg-white",
-  payment: "p-2 flex flex-col border-b border-gray-100 snap-end font-bold items-center",  
+  payment: "p-2 flex flex-col border-b border-gray-100 snap-end font-bold align-middle",  
   initial: "sticky top-0 left-0 right-0 backdrop-blur-md bg-white/50",
   new: "fixed bottom-0 left-0 right-0 backdrop-blur-md bg-white/50",
   firstRow: "mb-2 flex flex-row",
