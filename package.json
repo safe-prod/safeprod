@@ -10,9 +10,7 @@
   "dependencies": {
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.0",
-    "@niledatabase/server": "5.0.1",
-    "@niledatabase/react": "5.0.1"
+    "next": "15.5.0"
   },
   "devDependencies": {
     "typescript": "^5",
