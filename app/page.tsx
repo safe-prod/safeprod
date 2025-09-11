@@ -58,12 +58,12 @@ export default function page() {
         {items.map((item, index) => (
           <div key={index} className="snap-end p-2 flex flex-col border-b border-gray-100">
             <div className="mb-2 flex flex-row grow font-bold text-lg">
-              <div className="text-black grow">{item.investor}</div>
+              <div className="text-black grow">{item.counterparty}</div>
               <div className="text-red-900 grow text-right">{item.amount}</div>
             </div>
             <div className="flex flex-row grow font-bold text-sm text-gray-600">
               <div className="w-1/2">{item.date}</div>
-              <div className="w-1/2 text-right">{item.type}</div>
+              <div className="w-1/2 text-right">{item.product}</div>
             </div>
           </div>
         ))}
