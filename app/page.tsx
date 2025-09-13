@@ -1,5 +1,4 @@
 "use client"
-import "dotenv/config"
 import { useState } from "react"
 import { style } from "./style/style.ts"
 import { embed } from "ai"
