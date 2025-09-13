@@ -17,19 +17,19 @@ export default async function page() {
   const [payments, setPayments] = useState(paymentsData)
 
   function searchCounterparty(search: any): any {
-    return paymentsData.filter(payment: any => payment.counterparty.includes(search))
+    return paymentsData.filter((payment: any) => payment.counterparty.includes(search))
   }
 
   function searchProduct(search: any): any {
-    return paymentsData.filter(payment: any => payment.product.includes(search))
+    return paymentsData.filter((payment: any) => payment.product.includes(search))
   }
 
   function searchAmount(search: any): any {
-    return paymentsData.filter(payment: any => payment.amount.includes(search))
+    return paymentsData.filter((payment: any) => payment.amount.includes(search))
   }
 
   function searchDate(search: any): any {
-    return paymentsData.filter(payment: any => payment.date.includes(search))
+    return paymentsData.filter((payment: any) => payment.date.includes(search))
   }
   
   return (
