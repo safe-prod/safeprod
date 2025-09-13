@@ -1,9 +1,11 @@
 "use client"
 import { useState } from "react"
 import { style } from "./style/style.ts"
+import { getEmbedding } from "./script/embedding.ts"
 import { getPayments, searchCounterparty, searchFop, searchDate, searchProduct } from "./script/database.ts" 
 
 let paymentsData = await getPayments()
+let embedding = await getEmbedding("safe")
 
 export default async function page() {
   const [payments, setPayments] = useState(paymentsData)
@@ -16,7 +18,7 @@ export default async function page() {
           <div className={`${style.product}`}>SAFE</div>
         </div>
         <div className={`${style.secondRow}`}>
-          <div className={`${style.fop}`}>250,000</div>
+          <div className={`${style.fop}`}>{JSON.stringify(embedding)}</div>
           <div className={`${style.date}`}>Sep 12, 8:57PM</div>
         </div>
       </div>
