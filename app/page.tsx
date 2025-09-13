@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react"
 import { style } from "./style/style.ts"
-import { createClient } from "@/utils/supabase/server"
+import { createClient } from "@supabase/supabase-js"
 /*
 import { embed } from "ai"
 const result = await embed({
@@ -19,7 +19,7 @@ export default function page() {
     <div className={`${style.payments}`}>
       <div className={`${style.initial} ${style.payment}`}>
         <div className={`${style.firstRow}`}>
-          <div className={`${style.counterparty}`}>Initial</div>
+          <div className={`${style.fop}`}>Initial</div>
           <div className={`${style.product}`}>SAFE</div>
         </div>
         <div className={`${style.secondRow}`}>
@@ -31,7 +31,7 @@ export default function page() {
         {payments.map((payment, index) => (
           <div key={index} className={`${style.payment}`}>
             <div className={`${style.firstRow}`}>
-              <div className={`${style.counterparty}`}>{payment.fop}</div>
+              <div className={`${style.fop}`}>{payment.fop}</div>
               <div className={`${style.product}`}>{payment.product}</div>
             </div>
             <div className={`${style.secondRow}`}>
@@ -43,7 +43,7 @@ export default function page() {
       </div>
       <div className={`${style.new} ${style.payment}`}>
         <div className={`${style.firstRow}`}>
-          <input type="text" onChange={e => setPayments(searchCounterparty(e.target.value))} className={`${style.counterparty} ${style.input}`} placeholder="" />
+          <input type="text" onChange={e => setPayments(searchCounterparty(e.target.value))} className={`${style.fop} ${style.input}`} placeholder="" />
           <input type="text" onChange={e => setPayments(searchProduct(e.target.value))} className={`${style.product} ${style.input}`} placeholder="" />
         </div>
         <div className={`${style.secondRow}`}>
