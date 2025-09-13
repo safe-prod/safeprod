@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function layout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="en" className={style.font}>
+    <html lang="en" className={`${style.font}`}>
       <head>
         <link rel="icon" type="image/png" sizes="96x96" href="/style/icon.png" />
       </head>
