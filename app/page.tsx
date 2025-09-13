@@ -21,8 +21,8 @@ export default async function page() {
         </div>
       </div>
       <div>
-        {payments.map((payment: any, index: any) => (
-          <div key={index} className={`${style.payment}`}>
+        {payments.map((payment: any) => (
+          <div key={payment.id} className={`${style.payment}`}>
             <div className={`${style.firstRow}`}>
               <div className={`${style.fop}`}>{payment.fop}</div>
               <div className={`${style.product}`}>{payment.product}</div>
