@@ -3,10 +3,10 @@ import { useState } from "react"
 import { style } from "./style/style.ts"
 import { getPayments, searchCounterparty, searchFop, searchDate, searchProduct } from "./script/database.ts" 
 
-let payments = await getPayments()
+let paymentsData = await getPayments()
 
 export default async function page() {
-  const [payments, setPayments] = useState(payments)
+  const [payments, setPayments] = useState(paymentsData)
   
   return (
     <div className={`${style.payments}`}>
