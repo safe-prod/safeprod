@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { style } from "./style/style.ts"
 import { createClient } from "@supabase/supabase-js"
 /*
@@ -12,9 +12,14 @@ const result = await embed({
 
 export default async function page() {
   const [payments, setPayments] = useState<any[]>([])
-  const supabase = await createClient(`${process.env.NEXT_PUBLIC_SUPABASE_URL}`, `${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`)
-  const { data, error } = await supabase.from("safeprod").select()
-  setPayments(Array(data))
+  useEffect(() => {
+    const fetchPayments = async () => {
+      const supabase = createClient(`${process.env.NEXT_PUBLIC_SUPABASE_URL}`, `${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`);
+      const { data, error } = await supabase.from("safeprod").select("*")
+      setPayments(data || [])
+    }
+    fetchPayments()
+  }, [])
 
   function searchCounterparty(search: any): any {
     return payments.filter((payment: any) => payment.counterparty.includes(search))
