@@ -21,7 +21,7 @@ export default async function page() {
         </div>
       </div>
       <div>
-        {payments.map((payment => (
+        {payments.map(payment => (
           <div key={payment.id} className={`${style.payment}`}>
             <div className={`${style.firstRow}`}>
               <div className={`${style.fop}`}>{payment.fop}</div>
