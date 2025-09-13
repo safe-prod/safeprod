@@ -8,7 +8,7 @@ const result = await embed({
 })
 
 let paymentsData = [
-  { counterparty: "Grocery Store", amount: JSON.stringify(result), date: "Sep 28, 5:03PM", product: "Money" }
+  { counterparty: "Grocery Store", amount: JSON.stringify(result.embedding), date: "Sep 28, 5:03PM", product: "Money" }
 ]
 
 let style = {
