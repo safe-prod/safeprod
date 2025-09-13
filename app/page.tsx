@@ -40,7 +40,7 @@ export default function page() {
           </div>
         ))}
       </div>
-      /*
+      {/*
       <div className={`${style.new} ${style.payment}`}>
         <div className={`${style.firstRow}`}>
           <input type="text" onChange={e => setPayments(searchCounterparty(e.target.value))} className={`${style.counterparty} ${style.input}`} placeholder="Investor" />
@@ -51,7 +51,7 @@ export default function page() {
           <input type="text" onChange={e => setPayments(searchDate(e.target.value))} className={`${style.date} ${style.input}`} placeholder="Sep 27, 5:03PM" />
         </div>
       </div>
-      */
+      */}
     </div>
   )
 }
