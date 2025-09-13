@@ -4,5 +4,5 @@ const supabase = createClient(`${process.env.NEXT_PUBLIC_SUPABASE_URL}`, `${proc
 
 export async function getPayments() {
   const { data } = await supabase.from("safeprod").select()
-  return data
+  return Array(data)
 }
