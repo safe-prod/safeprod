@@ -10,7 +10,7 @@ const result = await embed({
 })
 */
 
-const supabase = await createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)
+const supabase = await createClient(`${process.env.NEXT_PUBLIC_SUPABASE_URL}`, `${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`)
 const { paymentsData: any } = await supabase.from("safeprod").select();
 
 export default function page() {
