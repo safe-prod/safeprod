@@ -34,6 +34,7 @@ export default async function page() {
   
   return (
     <div className={`${style.payments}`}>
+      {payments}
       <div className={`${style.initial} ${style.payment}`}>
         <div className={`${style.firstRow}`}>
           <div className={`${style.fop}`}>Initial</div>
