@@ -4,7 +4,7 @@ import { style } from "./style/style.ts"
 import { embed } from "ai"
 
 const result = await embed({
-  model: "google/text-embedding-005",
+  model: process.env.NEXT_PUBLIC_EMBEDDING_MODEL,
   value: "Grocery Store"
 })
 
