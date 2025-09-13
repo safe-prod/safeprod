@@ -1,7 +1,7 @@
 import localFont from "next/font/local"
 
 export const style = {
-  font: const font = localFont({
+  font: localFont({
     src: [
       {path: "./style/regular.woff2", weight: "400"},
       {path: "./style/bold.woff2", weight: "700"}
