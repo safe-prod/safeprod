@@ -1,9 +1,14 @@
 "use client"
 import { useState } from "react"
+import { embed } from "ai"
+
+const result = await embed({
+  model: "google/text-embedding-005",
+  value: "Grocery Store"
+})
 
 let paymentsData = [
-  { counterparty: "Loan", amount: "1,500", date: "Sep 27, 5:03PM", product: "Debt" },
-  { counterparty: "Grocery Store", amount: "98", date: "Sep 28, 5:03PM", product: "Money" }
+  { counterparty: "Grocery Store", amount: JSON.stringify(result), date: "Sep 28, 5:03PM", product: "Money" }
 ]
 
 let style = {
