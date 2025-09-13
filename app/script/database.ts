@@ -4,8 +4,8 @@ let payments = []
 const supabase = createClient(`${process.env.NEXT_PUBLIC_SUPABASE_URL}`, `${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`);
 
 export async function getPayments() {
-  const { data } = await supabase.from("safeprod").select()
-  payments = Array(data)
+  const { data, error } = await supabase.from("safeprod").select()
+  payments = Array(error)
   return payments
 }
 
