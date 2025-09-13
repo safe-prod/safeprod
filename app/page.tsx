@@ -23,7 +23,7 @@ export default async function page() {
       <br />
       {JSON.stringify(payments)}
       <div>
-        {payments.map(payment => (
+        {payments.map((payment: any) => (
           <div key={payment.id} className={`${style.payment}`}>
             <div className={`${style.firstRow}`}>
               <div className={`${style.fop}`}>{payment.fop}</div>
