@@ -13,7 +13,8 @@ const result = await embed({
 export default async function page() {
   const supabase = await createClient(`${process.env.NEXT_PUBLIC_SUPABASE_URL}`, `${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`)
   const { data, error } = await supabase.from("safeprod").select()
-  const [payments, setPayments] = useState(data)
+  let paymentsData = data
+  const [payments, setPayments] = useState(paymentsData)
 
   function searchCounterparty(search: any): any {
     return paymentsData.filter(payment => payment.counterparty.includes(search))
