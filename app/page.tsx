@@ -4,9 +4,8 @@ import { useState } from "react"
 import { style } from "./style/style.ts"
 import { embed } from "ai"
 
-const embedding_model = process.env.NEXT_PUBLIC_EMBEDDING_MODEL
 const result = await embed({
-  model: embedding_model,
+  model: process.env.NEXT_PUBLIC_EMBEDDING_MODEL,
   value: "Grocery Store"
 })
 
