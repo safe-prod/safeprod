@@ -17,22 +17,6 @@ export default async function page() {
   const [payments, setPayments] = useState<any[]>([])
   setPayments(Array(data))
   
-  function searchCounterparty(search: any): any {
-    return payments.filter((payment: any) => payment.counterparty.includes(search))
-  }
-
-  function searchProduct(search: any): any {
-    return payments.filter((payment: any) => payment.product.includes(search))
-  }
-
-  function searchAmount(search: any): any {
-    return payments.filter((payment: any) => payment.amount.includes(search))
-  }
-
-  function searchDate(search: any): any {
-    return payments.filter((payment: any) => payment.date.includes(search))
-  }
-  
   return (
     <div className={`${style.payments}`}>
       <div className={`${style.initial} ${style.payment}`}>
@@ -71,4 +55,20 @@ export default async function page() {
       </div>
     </div>
   )
+}
+
+function searchCounterparty(search: any): any {
+  return payments.filter((payment: any) => payment.counterparty.includes(search))
+}
+
+function searchProduct(search: any): any {
+  return payments.filter((payment: any) => payment.product.includes(search))
+}
+
+function searchAmount(search: any): any {
+  return payments.filter((payment: any) => payment.amount.includes(search))
+}
+
+function searchDate(search: any): any {
+  return payments.filter((payment: any) => payment.date.includes(search))
 }
