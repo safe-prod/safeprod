@@ -4,9 +4,11 @@ import { getEmbedding } from "./embedding.ts"
 let payments: any = []
 const supabase = createClient(`${process.env.NEXT_PUBLIC_SUPABASE_URL}`, `${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`)
 
-const embedding = await getEmbedding("apple")
-const { error } = await supabase.from("safeprod").insert({ id: 1, date: "2025-09-13T12:47:00+00:00", counterparty: "Grocery Store", fop: embedding, product: "Spot"})
-
+export async function addPayment() {
+  const embedding = await getEmbedding("apple")
+  const { error } = await supabase.from("safeprod").insert({ id: 1, date: "2025-09-13T12:47:00+00:00", counterparty: "Grocery Store", fop: embedding, product: "Spot"})
+}
+  
 export async function getPayments() {
   const { data, error } = await supabase.from("safeprod").select()
   payments = data
