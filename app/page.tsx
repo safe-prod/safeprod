@@ -5,7 +5,7 @@ import { style } from "./style/style.ts"
 import { embed } from "ai"
 
 const result = await embed({
-  model: process.env.NEXT_PUBLIC_EMBEDDING_MODEL,
+  model: `${process.env.NEXT_PUBLIC_EMBEDDING_MODEL}`,
   value: "Grocery Store"
 })
 
