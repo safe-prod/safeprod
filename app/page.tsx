@@ -9,7 +9,7 @@ const result = await embed({
 })
 
 let paymentsData = [
-  { counterparty: "Grocery Store", amount: result.embedding[0].toString(), date: "Sep 28, 5:03PM", product: "Money" }
+  { counterparty: "Grocery Store", amount: result.embedding.length.toString(), date: "Sep 28, 5:03PM", product: "Money" }
 ]
 
 export default function page() {
