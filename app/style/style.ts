@@ -1,12 +1,14 @@
 import localFont from "next/font/local"
 
+const font = localFont({
+  src: [
+    {path: "./style/regular.woff2", weight: "400"},
+    {path: "./style/bold.woff2", weight: "700"}
+  ]
+})
+
 export const style = {
-  font: localFont({
-    src: [
-      {path: "./style/regular.woff2", weight: "400"},
-      {path: "./style/bold.woff2", weight: "700"}
-    ]
-  }).className,
+  font: font.className,
   payments: "flex flex-col scroll-smooth snap-y snap-mandatory bg-white",
   payment: "p-2 flex flex-col border-b border-gray-100 snap-end font-bold",  
   initial: "sticky top-0 left-0 right-0 backdrop-blur-md bg-white/50",
