@@ -29,7 +29,7 @@ export default function page() {
   const [payments, setPayments] = useState(paymentsData)
   return (
     <div className={`${style.payments}`}>
-      <div href="/about" className={`${style.initial} ${style.payment}`}>
+      <div className={`${style.initial} ${style.payment}`}>
         <div className={`${style.firstRow}`}>
           <div className={`${style.counterparty}`}>Initial</div>
           <div className={`${style.product}`}>SAFE</div>
