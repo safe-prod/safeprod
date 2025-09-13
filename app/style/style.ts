@@ -15,7 +15,7 @@ export const style = {
   new: "fixed bottom-0 left-0 right-0 border-t backdrop-blur-md bg-white/50",
   firstRow: "mb-2 flex flex-row",
   secondRow: "flex flex-row",
-  counterparty: "w-1/2 mr-2 text-lg text-black",
+  fop: "w-1/2 mr-2 text-lg text-black",
   product: "w-1/2 text-right text-sm text-gray-600",
   amount: "w-1/2 mr-2 text-lg text-red-900",
   date: "w-1/2 text-right text-sm text-gray-600",
