@@ -12,12 +12,10 @@ const result = await embed({
 
 const supabase = createClient(`${process.env.NEXT_PUBLIC_SUPABASE_URL}`, `${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`);
 const { data, error } = await supabase.from("safeprod").select()
-let paymentsData: any = []
+let paymentsData: any = data
 
 export default async function page() {
-  const [payments, setPayments] = useState<any[]>([])
-  setPayments(Array(data))
-  paymentsData = payments
+  const [payments, setPayments] = useState<any[]>(data)
   
   return (
     <div className={`${style.payments}`}>
