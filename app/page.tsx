@@ -1,18 +1,9 @@
 "use client"
 import { useState } from "react"
 import { style } from "./style/style.ts"
-import { createClient } from "@supabase/supabase-js"
-/*
-import { embed } from "ai"
-const result = await embed({
-  model: `${process.env.NEXT_PUBLIC_EMBEDDING_MODEL}`,
-  value: "Grocery Store"
-})
-*/
+import { getPayments } from "./script/database.ts" 
 
-let paymentsData: any = []
-const supabase = createClient(`${process.env.NEXT_PUBLIC_SUPABASE_URL}`, `${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`);
-supabase.from("safeprod").select().then(data => paymentsData = data)
+let paymentsData = await getPayments()
 
 export default async function page() {
   const [payments, setPayments] = useState(paymentsData)
