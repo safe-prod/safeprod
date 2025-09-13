@@ -17,8 +17,8 @@ export function searchProduct(search: any): any {
   return payments.filter((payment: any) => payment.product.includes(search))
 }
 
-export function searchAmount(search: any): any {
-  return payments.filter((payment: any) => payment.amount.includes(search))
+export function searchFop(search: any): any {
+  return payments.filter((payment: any) => payment.fop.includes(search))
 }
 
 export function searchDate(search: any): any {
