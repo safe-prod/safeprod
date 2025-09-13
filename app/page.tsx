@@ -34,7 +34,7 @@ export default function page() {
               <div className={`${style.product}`}>{payment.product}</div>
             </div>
             <div className={`${style.secondRow}`}>
-              <div className={`${style.amount}`}>{/* payment.amount */}</div>
+              <div className={`${style.amount}`}>{payment.amount}</div>
               <div className={`${style.date}`}>{payment.date}</div>
             </div>
           </div>
