@@ -12,10 +12,12 @@ const result = await embed({
 
 const supabase = createClient(`${process.env.NEXT_PUBLIC_SUPABASE_URL}`, `${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`);
 const { data, error } = await supabase.from("safeprod").select()
+let paymentsData = []
 
 export default async function page() {
   const [payments, setPayments] = useState<any[]>([])
   setPayments(Array(data))
+  paymentsData = payments
   
   return (
     <div className={`${style.payments}`}>
@@ -58,17 +60,17 @@ export default async function page() {
 }
 
 function searchCounterparty(search: any): any {
-  return payments.filter((payment: any) => payment.counterparty.includes(search))
+  return paymentsData.filter((payment: any) => payment.counterparty.includes(search))
 }
 
 function searchProduct(search: any): any {
-  return payments.filter((payment: any) => payment.product.includes(search))
+  return paymentsData.filter((payment: any) => payment.product.includes(search))
 }
 
 function searchAmount(search: any): any {
-  return payments.filter((payment: any) => payment.amount.includes(search))
+  return paymentsData.filter((payment: any) => payment.amount.includes(search))
 }
 
 function searchDate(search: any): any {
-  return payments.filter((payment: any) => payment.date.includes(search))
+  return paymentsData.filter((payment: any) => payment.date.includes(search))
 }
