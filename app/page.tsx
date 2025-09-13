@@ -16,7 +16,7 @@ export default async function page() {
     const fetchPayments = async () => {
       const supabase = createClient(`${process.env.NEXT_PUBLIC_SUPABASE_URL}`, `${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`);
       const { data, error } = await supabase.from("safeprod").select("*")
-      setPayments(data || [])
+      setPayments(Array(data))
     }
     fetchPayments()
   }, [])
