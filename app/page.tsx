@@ -11,25 +11,24 @@ const result = await embed({
 */
 
 export default async function page() {
+  const [payments, setPayments] = useState([])
   const supabase = await createClient(`${process.env.NEXT_PUBLIC_SUPABASE_URL}`, `${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`)
-  let paymentsData: any = []
-  supabase.from("safeprod").select().then(data => paymentsData = data)
-  const [payments, setPayments] = useState(paymentsData)
+  supabase.from("safeprod").select().then(data => setPayments(data))
 
   function searchCounterparty(search: any): any {
-    return paymentsData.filter((payment: any) => payment.counterparty.includes(search))
+    return payments.filter((payment: any) => payment.counterparty.includes(search))
   }
 
   function searchProduct(search: any): any {
-    return paymentsData.filter((payment: any) => payment.product.includes(search))
+    return payments.filter((payment: any) => payment.product.includes(search))
   }
 
   function searchAmount(search: any): any {
-    return paymentsData.filter((payment: any) => payment.amount.includes(search))
+    return payments.filter((payment: any) => payment.amount.includes(search))
   }
 
   function searchDate(search: any): any {
-    return paymentsData.filter((payment: any) => payment.date.includes(search))
+    return payments.filter((payment: any) => payment.date.includes(search))
   }
   
   return (
