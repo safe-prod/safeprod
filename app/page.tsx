@@ -20,8 +20,6 @@ export default async function page() {
           <div className={`${style.date}`}>Sep 12, 8:57PM</div>
         </div>
       </div>
-      <br />
-      {JSON.stringify(payments)}
       <div>
         {payments.map((payment: any) => (
           <div key={payment.id} className={`${style.payment}`}>
@@ -36,7 +34,6 @@ export default async function page() {
           </div>
         ))}
       </div>
-      {/*
       <div className={`${style.new} ${style.payment}`}>
         <div className={`${style.firstRow}`}>
           <input type="text" onChange={e => setPayments(searchCounterparty(e.target.value))} className={`${style.counterparty} ${style.input}`} placeholder="" />
@@ -47,7 +44,6 @@ export default async function page() {
           <input type="text" onChange={e => setPayments(searchDate(e.target.value))} className={`${style.date} ${style.input}`} placeholder="" />
         </div>
       </div>
-      */}
     </div>
   )
 }
