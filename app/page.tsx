@@ -34,14 +34,13 @@ export default async function page() {
   
   return (
     <div className={`${style.payments}`}>
-      {payments}
       <div className={`${style.initial} ${style.payment}`}>
         <div className={`${style.firstRow}`}>
           <div className={`${style.fop}`}>Initial</div>
           <div className={`${style.product}`}>SAFE</div>
         </div>
         <div className={`${style.secondRow}`}>
-          <div className={`${style.amount}`}>250,000</div>
+          <div className={`${style.amount}`}>{payments}</div>
           <div className={`${style.date}`}>Sep 12, 8:57PM</div>
         </div>
       </div>
