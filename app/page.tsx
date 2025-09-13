@@ -1,10 +1,9 @@
 "use client"
 import { useState } from "react"
 import { style } from "./style/style.ts"
-import { getPayments, addPayment, searchCounterparty, searchAmount, searchDate, searchProduct } from "./script/database.ts" 
+import { getPayments, searchCounterparty, searchAmount, searchDate, searchProduct } from "./script/database.ts" 
 
-await addPayment()
-// let payments = await getPayments()
+let payments = await getPayments()
 
 export default async function page() {
   // const [payments, setPayments] = useState(paymentsData)
@@ -21,7 +20,6 @@ export default async function page() {
           <div className={`${style.date}`}>Sep 12, 8:57PM</div>
         </div>
       </div>
-      {/*
       <br />
       {JSON.stringify(payments)}
       <div>
@@ -38,7 +36,6 @@ export default async function page() {
           </div>
         ))}
       </div>
-      */}
       {/*
       <div className={`${style.new} ${style.payment}`}>
         <div className={`${style.firstRow}`}>
