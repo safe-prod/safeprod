@@ -22,7 +22,6 @@ export default async function page() {
       </div>
       <br />
       {JSON.stringify(payments)}
-      {/*
       <div>
         {payments.map(payment => (
           <div key={payment.id} className={`${style.payment}`}>
@@ -37,7 +36,6 @@ export default async function page() {
           </div>
         ))}
       </div>
-      */}
       {/*
       <div className={`${style.new} ${style.payment}`}>
         <div className={`${style.firstRow}`}>
