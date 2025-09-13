@@ -1,16 +1,17 @@
 "use client"
 import { useState } from "react"
 import { style } from "./style/style.ts"
+import { createClient } from "@/utils/supabase/server"
+/*
 import { embed } from "ai"
-
 const result = await embed({
   model: `${process.env.NEXT_PUBLIC_EMBEDDING_MODEL}`,
   value: "Grocery Store"
 })
+*/
 
-let paymentsData = [
-  { counterparty: "Grocery Store", amount: result.embedding.length.toString(), date: "Sep 28, 5:03PM", product: "Money" }
-]
+const supabase = await createClient()
+const { paymentsData: any } = await supabase.from("safeprod").select();
 
 export default function page() {
   const [payments, setPayments] = useState(paymentsData)
@@ -30,7 +31,7 @@ export default function page() {
         {payments.map((payment, index) => (
           <div key={index} className={`${style.payment}`}>
             <div className={`${style.firstRow}`}>
-              <div className={`${style.counterparty}`}>{payment.counterparty}</div>
+              <div className={`${style.counterparty}`}>{payment.fop}</div>
               <div className={`${style.product}`}>{payment.product}</div>
             </div>
             <div className={`${style.secondRow}`}>
