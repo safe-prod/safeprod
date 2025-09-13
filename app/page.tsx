@@ -12,8 +12,8 @@ const result = await embed({
 
 export default async function page() {
   const supabase = await createClient(`${process.env.NEXT_PUBLIC_SUPABASE_URL}`, `${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`)
-  const { data, error } = await supabase.from("safeprod").select()
-  let paymentsData = data
+  let paymentsData: any = []
+  supabase.from("safeprod").select().then(data => paymentsData = data)
   const [payments, setPayments] = useState(paymentsData)
 
   function searchCounterparty(search: any): any {
