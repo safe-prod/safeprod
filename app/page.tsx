@@ -1,12 +1,12 @@
 "use client"
 import { useState } from "react"
 import { style } from "./style/style.ts"
-import { getPayments } from "./script/database.ts" 
+import { getPayments, searchCounterparty, searchAmount, searchDate, searchProduct } from "./script/database.ts" 
 
-let paymentsData = await getPayments()
+let payments = await getPayments()
 
 export default async function page() {
-  const [payments, setPayments] = useState(paymentsData)
+  // const [payments, setPayments] = useState(paymentsData)
   
   return (
     <div className={`${style.payments}`}>
@@ -34,6 +34,7 @@ export default async function page() {
           </div>
         ))}
       </div>
+      {/*
       <div className={`${style.new} ${style.payment}`}>
         <div className={`${style.firstRow}`}>
           <input type="text" onChange={e => setPayments(searchCounterparty(e.target.value))} className={`${style.fop} ${style.input}`} placeholder="" />
@@ -44,22 +45,7 @@ export default async function page() {
           <input type="text" onChange={e => setPayments(searchDate(e.target.value))} className={`${style.date} ${style.input}`} placeholder="" />
         </div>
       </div>
+      */}
     </div>
   )
-}
-
-function searchCounterparty(search: any): any {
-  return paymentsData.filter((payment: any) => payment.counterparty.includes(search))
-}
-
-function searchProduct(search: any): any {
-  return paymentsData.filter((payment: any) => payment.product.includes(search))
-}
-
-function searchAmount(search: any): any {
-  return paymentsData.filter((payment: any) => payment.amount.includes(search))
-}
-
-function searchDate(search: any): any {
-  return paymentsData.filter((payment: any) => payment.date.includes(search))
 }
