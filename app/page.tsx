@@ -2,22 +2,8 @@
 import { useState } from "react"
 
 let paymentsData = [
-  { counterparty: "Investor", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
-  { counterparty: "Grocery Store", amount: "$98", date: "Sep 28, 5:03PM", product: "Money" },
-  { counterparty: "Restaurant", amount: "$100", date: "Sep 27, 12:33PM", product: "Money" },
-  { counterparty: "Creditor", amount: "$520", date: "Sep 27, 5:03PM", product: "Debt" },
-  { counterparty: "Investor", amount: "$1,500", date: "Sep 29, 5:03PM", product: "Equity" },
-  { counterparty: "Investor", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
-  { counterparty: "Grocery Store", amount: "$120", date: "Sep 27, 5:03PM", product: "Money" },
-  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
-  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
-  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
-  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
-  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
-  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
-  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
-  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" },
-  { counterparty: "Investor 1", amount: "$1,500", date: "Sep 27, 5:03PM", product: "Equity" }
+  { counterparty: "Loan", amount: "1,500", date: "Sep 27, 5:03PM", product: "Debt" },
+  { counterparty: "Grocery Store", amount: "98", date: "Sep 28, 5:03PM", product: "Money" }
 ]
 
 let style = {
@@ -44,7 +30,7 @@ export default function page() {
           <div className={`${style.product}`}>SAFE</div>
         </div>
         <div className={`${style.secondRow}`}>
-          <div className={`${style.amount}`}>$250,000</div>
+          <div className={`${style.amount}`}>250,000</div>
           <div className={`${style.date}`}>Sep 12, 8:57PM</div>
         </div>
       </div>
@@ -68,7 +54,7 @@ export default function page() {
           <input type="text" onChange={e => setPayments(searchProduct(e.target.value))} className={`${style.product} ${style.input}`} placeholder="Equity" />
         </div>
         <div className={`${style.secondRow}`}>
-          <input type="text" onChange={e => setPayments(searchAmount(e.target.value))} className={`${style.amount} ${style.input}`} placeholder="$" />
+          <input type="text" onChange={e => setPayments(searchAmount(e.target.value))} className={`${style.amount} ${style.input}`} placeholder="" />
           <input type="text" onChange={e => setPayments(searchDate(e.target.value))} className={`${style.date} ${style.input}`} placeholder="Sep 27, 5:03PM" />
         </div>
       </div>
