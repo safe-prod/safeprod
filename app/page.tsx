@@ -10,11 +10,27 @@ const result = await embed({
 })
 */
 
-const supabase = await createClient(`${process.env.NEXT_PUBLIC_SUPABASE_URL}`, `${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`)
-const { data, error } = await supabase.from("safeprod").select()
-
-export default function page() {
+export default async function page() {
+  const supabase = await createClient(`${process.env.NEXT_PUBLIC_SUPABASE_URL}`, `${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`)
+  const { data, error } = await supabase.from("safeprod").select()
   const [payments, setPayments] = useState(data)
+
+  function searchCounterparty(search: any): any {
+    return paymentsData.filter(payment => payment.counterparty.includes(search))
+  }
+
+  function searchProduct(search: any): any {
+    return paymentsData.filter(payment => payment.product.includes(search))
+  }
+
+  function searchAmount(search: any): any {
+    return paymentsData.filter(payment => payment.amount.includes(search))
+  }
+
+  function searchDate(search: any): any {
+    return paymentsData.filter(payment => payment.date.includes(search))
+  }
+  
   return (
     <div className={`${style.payments}`}>
       <div className={`${style.initial} ${style.payment}`}>
@@ -53,20 +69,4 @@ export default function page() {
       </div>
     </div>
   )
-}
-
-function searchCounterparty(search: any): any {
-  return paymentsData.filter(payment => payment.counterparty.includes(search))
-}
-
-function searchProduct(search: any): any {
-  return paymentsData.filter(payment => payment.product.includes(search))
-}
-
-function searchAmount(search: any): any {
-  return paymentsData.filter(payment => payment.amount.includes(search))
-}
-
-function searchDate(search: any): any {
-  return paymentsData.filter(payment => payment.date.includes(search))
 }
