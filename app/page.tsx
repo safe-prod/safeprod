@@ -1,15 +1,15 @@
 "use client"
 import { useState } from "react"
 import { style } from "./style/style.ts"
-// import { embed } from "ai"
-/*
+import { embed } from "ai"
+
 const result = await embed({
   model: "google/text-embedding-005",
   value: "Grocery Store"
 })
-*/
+
 let paymentsData = [
-  { counterparty: "Grocery Store", amount: "JSON.stringify(result.embedding)", date: "Sep 28, 5:03PM", product: "Money" }
+  { counterparty: "Grocery Store", amount: JSON.stringify(result.embedding), date: "Sep 28, 5:03PM", product: "Money" }
 ]
 
 export default function page() {
