@@ -6,7 +6,7 @@ import { getPayments, searchCounterparty, searchFop, searchDate, searchProduct }
 
 let paymentsData = await getPayments()
 let embedding = await getEmbedding("safe")
-embeddingResult = JSON.stringify(embedding)
+let embeddingResult = JSON.stringify(embedding)
 
 export default async function page() {
   const [payments, setPayments] = useState(paymentsData)
