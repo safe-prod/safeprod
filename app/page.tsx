@@ -5,8 +5,8 @@ import { getEmbedding } from "./script/embedding.ts"
 import { getPayments, searchCounterparty, searchFop, searchDate, searchProduct } from "./script/database.ts" 
 
 let paymentsData = await getPayments()
-let embedding = await getEmbedding("safe")
-let embeddingResult = JSON.stringify(embedding[0])
+// let embedding = await getEmbedding("safe")
+let embedding = ["test"]
 
 export default async function page() {
   const [payments, setPayments] = useState(paymentsData)
@@ -19,7 +19,7 @@ export default async function page() {
           <div className={`${style.product}`}>SAFE</div>
         </div>
         <div className={`${style.secondRow}`}>
-          <div className={`${style.fop}`}>{embeddingResult}</div>
+          <div className={`${style.fop}`}>{JSON.stringify(embedding)}</div>
           <div className={`${style.date}`}>Sep 12, 8:57PM</div>
         </div>
       </div>
@@ -37,7 +37,6 @@ export default async function page() {
           </div>
         ))}
       </div>
-      {/*
       <div className={`${style.new} ${style.payment}`}>
         <div className={`${style.firstRow}`}>
           <input type="text" onChange={e => setPayments(searchCounterparty(e.target.value))} className={`${style.counterparty} ${style.input}`} placeholder="" />
@@ -48,7 +47,6 @@ export default async function page() {
           <input type="text" onChange={e => setPayments(searchDate(e.target.value))} className={`${style.date} ${style.input}`} placeholder="" />
         </div>
       </div>
-      */}
     </div>
   )
 }
