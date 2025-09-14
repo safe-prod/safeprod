@@ -5,8 +5,7 @@ import { getEmbedding } from "./script/embedding.ts"
 import { getPayments, searchCounterparty, searchFop, searchDate, searchProduct } from "./script/database.ts" 
 
 let paymentsData = await getPayments()
-// let embedding = await getEmbedding("safe")
-let embedding = ["test"]
+let embedding = await getEmbedding("safe")
 
 export default async function page() {
   const [payments, setPayments] = useState(paymentsData)
