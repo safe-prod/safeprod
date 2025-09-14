@@ -6,7 +6,7 @@ import { getPayments, searchCounterparty, searchFop, searchDate, searchProduct }
 
 let paymentsData = await getPayments()
 let embedding = await getEmbedding("safe")
-embedding = JSON.stringify(embedding)
+embeddingResult = JSON.stringify(embedding)
 
 export default async function page() {
   const [payments, setPayments] = useState(paymentsData)
@@ -19,7 +19,7 @@ export default async function page() {
           <div className={`${style.product}`}>SAFE</div>
         </div>
         <div className={`${style.secondRow}`}>
-          <div className={`${style.fop}`}>{embedding}</div>
+          <div className={`${style.fop}`}>{embeddingResult}</div>
           <div className={`${style.date}`}>Sep 12, 8:57PM</div>
         </div>
       </div>
