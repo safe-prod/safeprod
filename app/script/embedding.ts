@@ -5,5 +5,5 @@ export async function getEmbedding(value: any) {
     model: `${process.env.NEXT_PUBLIC_EMBEDDING_MODEL}`,
     value: value
   })
-  return result.embedding
+  return result.embedding[0]
 }
