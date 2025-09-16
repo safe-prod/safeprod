@@ -7,7 +7,7 @@ const font = localFont({
   ]
 })
 
-export const accountClasses = {
+export default const accountClasses = {
   font: font.className,
   payments: "flex flex-col scroll-smooth snap-y snap-mandatory bg-white",
   payment: "p-2 flex flex-col border-b border-gray-100 snap-end font-bold",  
