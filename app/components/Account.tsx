@@ -1,6 +1,6 @@
 "use client"
 
-export async default Account() {
+export default async function Account() {
   return (
     <div>
       {transactions.map((transaction: any) => (
