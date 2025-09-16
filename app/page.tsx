@@ -1,6 +1,6 @@
 "use client"
 
-export default async function HomePage() {
+export default function HomePage() {
   return (
     <div className={`${style.payments}`}>
       <Account />
