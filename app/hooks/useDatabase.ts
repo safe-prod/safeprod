@@ -3,24 +3,24 @@ import { createClient } from "@supabase/supabase-js"
 let payments: any = []
 const supabase = createClient(`${process.env.NEXT_PUBLIC_SUPABASE_URL}`, `${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`)
   
-export async function getPayments() {
+export default async function useDatabase() {
   const { data, error } = await supabase.from("safeprod").select()
   payments = data
   return payments
 }
 
-export function searchCounterparty(search: any): any {
+function searchCounterparty(search: any): any {
   return payments.filter((payment: any) => payment.counterparty.includes(search))
 }
 
-export function searchProduct(search: any): any {
+function searchProduct(search: any): any {
   return payments.filter((payment: any) => payment.product.includes(search))
 }
 
-export function searchFop(search: any): any {
+function searchFop(search: any): any {
   return payments.filter((payment: any) => payment.fop.includes(search))
 }
 
-export function searchDate(search: any): any {
+function searchDate(search: any): any {
   return payments.filter((payment: any) => payment.date.includes(search))
 }
