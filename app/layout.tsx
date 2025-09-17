@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import localFont from "next/font/local"
+import { AuthProvider } from "./contexts/AuthContext"
 
 const font = localFont({
   src: [
@@ -20,7 +21,9 @@ export default function Layout({children}: {children: React.ReactNode}) {
         <link rel="icon" type="image/png" sizes="96x96" href="/whitelabels/iconLight.png" />
       </head>
       <body>
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   )
