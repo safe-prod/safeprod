@@ -1,4 +1,3 @@
-import "./styles/globals.css"
 import { style } from "./style/style.ts" 
 import type { Metadata } from "next"
 
