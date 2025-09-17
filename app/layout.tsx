@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import localFont from "next/font/local"
 import { AuthProvider } from "./contexts/AuthContext"
 
+const { signOut } = useAuth()
+
 const font = localFont({
   src: [
     {path: "./whitelabels/fontRegular.woff2", weight: "400"},
@@ -22,6 +24,7 @@ export default function Layout({children}: {children: React.ReactNode}) {
       </head>
       <body>
         <AuthProvider>
+          <button onClick={() => signOut()}>Logout</button>
           {children}
         </AuthProvider>
       </body>
