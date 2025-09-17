@@ -1,9 +1,6 @@
-"use client" 
 import type { Metadata } from "next"
 import localFont from "next/font/local"
-import { AuthProvider, useAuth } from "./contexts/AuthContext"
-
-const { signOut } = useAuth()
+import { AuthProvider } from "./contexts/AuthContext"
 
 const font = localFont({
   src: [
@@ -25,7 +22,6 @@ export default function Layout({children}: {children: React.ReactNode}) {
       </head>
       <body>
         <AuthProvider>
-          <button onClick={() => signOut()}>Logout</button>
           {children}
         </AuthProvider>
       </body>
