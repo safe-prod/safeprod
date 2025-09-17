@@ -1,6 +1,8 @@
 # SAFE
 
-Superintelligence Alignment through Financial Engineering (SAFE) is a product for converting superintelligence into financial products.
+> 🚧 **Under Construction** : This product is currently in development. The MVP is not yet ready, and users should not expect it to work at this stage.
+
+Superintelligence Alignment through Financial Engineering (SAFE) is a financial product that aids in aligning superintelligence by transforming it into financial products.
 
 ## Installation
 
