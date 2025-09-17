@@ -1,6 +1,6 @@
 "use client"
 
-export default function Auth() {
+export default function Spot() {
   return (
     <div>
       
