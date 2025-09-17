@@ -8,6 +8,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 type AuthContextType = {
   user: Session["user"] | null
   signIn: (options: { email: string; password: string }) => Promise<void>
+  signUp: (options: { email: string; password: string }) => Promise<void>
   signOut: () => Promise<void>
 }
 
@@ -19,25 +20,29 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => {
       setUser(session?.user ?? null)
-    })
-    supabase.auth.getSession().then(({ data: { session } }) => setUser(session?.user ?? null));
-    return () => { authListener?.subscription.unsubscribe(); }
+    });
+    supabase.auth.getSession().then(({ data: { session } }) => setUser(session?.user ?? null))
+    return () => { authListener?.subscription.unsubscribe() }
   }, [])
 
   const signIn = async ({ email, password }: { email: string; password: string }) => {
     await supabase.auth.signInWithPassword({ email, password })
   }
 
+  const signUp = async ({ email, password }: { email: string; password: string }) => {
+    await supabase.auth.signUp({ email, password })
+  }
+
   const signOut = async () => {
     await supabase.auth.signOut()
   }
-
+  
   return (
-    <AuthContext.Provider value={{ user, signIn, signOut }}>
+    <AuthContext.Provider value={{ user, signIn, signUp, signOut }}>
       {children}
     </AuthContext.Provider>
   )
-};
+}
 
 export const useAuth = () => {
   const context = useContext(AuthContext)
