@@ -1,6 +1,6 @@
 "use client"
 
-export default function Spot() {
+export default function Money() {
   return (
     <div>
       
