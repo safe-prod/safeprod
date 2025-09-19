@@ -5,7 +5,8 @@ import usePrice from "../products/usePrice"
 export default function Page() {
   const realProductRef = useRef(null)
   const [ realProduct, setRealProduct ] = useState("")
-  const price = usePrice([])
+  const price = usePrice(realProduct)
+  
   return (
     <div>
       <input ref={realProductRef} type="text" placeholder="Real product" />
