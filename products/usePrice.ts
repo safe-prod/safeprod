@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
 import { embed } from "ai"
 
-export default function usePrice(realProduct: string) {
-  const [ price, setPrice ] = useState([])
+export default function usePrice(realProduct: string): number[] {
+  const [ price, setPrice ] = useState<number[]>([])
   
   useEffect(() => {
     const priceRealProduct = async () => {
