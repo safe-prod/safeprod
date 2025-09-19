@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { embed } from "ai"
 
 export default function usePrice(realProduct: string): number[] {
-  const [price, setPrice] = useState([])
+  const [ price, setPrice ] = useState([])
   
   useEffect(() => {
     const priceRealProduct = async () => {
@@ -13,7 +13,7 @@ export default function usePrice(realProduct: string): number[] {
       setPrice(embedding)
     }
     priceRealProduct()
-  }, [realProduct])
+  }, [ realProduct ])
 
   return { price, setPrice }
 }
