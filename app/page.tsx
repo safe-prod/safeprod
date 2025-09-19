@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <div>
       <input ref={realProductRef} type="text" placeholder="Real product" />
-      <button onClick={() => {setRealProduct(realProductRef.current.value)}}>Price</button>
+      <button onClick={() => {setRealProduct(realProductRef.current?.value)}}>Price</button>
       <div>{price}</div>
     </div>
   )
