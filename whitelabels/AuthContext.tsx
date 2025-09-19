@@ -1,6 +1,8 @@
 "use client"
 import { createContext, useContext, useEffect, useState, ReactNode } from "react"
 import { createClient, SupabaseClient, Session } from "@supabase/supabase-js"
+import { Email } from "../regulations/IETF-RFC-3696"
+import { Password } from "../regulations/NIST-SP-800-63”
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
@@ -8,8 +10,8 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
 type AuthContextType = {
   user: Session["user"] | null
-  signIn: (options: { email: string; password: string }) => Promise<void>
-  signUp: (options: { email: string; password: string }) => Promise<void>
+  signIn: (options: { email: Email, password: Password }) => Promise<void>
+  signUp: (options: { email: Email, password: Password }) => Promise<void>
   signOut: () => Promise<void>
 }
 
@@ -26,11 +28,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     return () => { authListener?.subscription.unsubscribe() }
   }, [])
 
-  const signIn = async ({ email, password }: { email: string; password: string }) => {
+  const signIn = async ({ email, password }: { email: Email, password: Password }) => {
     await supabase.auth.signInWithPassword({ email, password })
   }
 
-  const signUp = async ({ email, password }: { email: string; password: string }) => {
+  const signUp = async ({ email, password }: { email: Email, password: Password }) => {
     await supabase.auth.signUp({ email, password })
   }
 
