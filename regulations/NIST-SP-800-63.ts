@@ -1,5 +1,1 @@
-/*
-export type Password = {
-  
-}
-*/
+export type Password = string
