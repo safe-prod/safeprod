@@ -2,7 +2,7 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react"
 import { createClient, SupabaseClient, Session } from "@supabase/supabase-js"
 import { Email } from "../regulations/IETF-RFC-3696"
-import { Password } from "../regulations/NIST-SP-800-63”
+import { Password } from "../regulations/NIST-SP-800-63"
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
