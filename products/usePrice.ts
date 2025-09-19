@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { embed } from "ai"
 
-export default function usePrice(realProduct: string): number[] {
+export default function usePrice(realProduct: string) {
   const [ price, setPrice ] = useState([])
   
   useEffect(() => {
@@ -15,5 +15,5 @@ export default function usePrice(realProduct: string): number[] {
     priceRealProduct()
   }, [ realProduct ])
 
-  return { price, setPrice }
+  return price
 }
