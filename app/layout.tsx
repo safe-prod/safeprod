@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import localFont from "next/font/local"
-import { AuthProvider } from "../contexts/AuthContext"
+import { AuthProvider } from "../whitelabels/AuthContext"
 
 const font = localFont({
   src: [
