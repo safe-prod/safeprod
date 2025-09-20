@@ -9,22 +9,30 @@ const { embedding } = await embed({
 })
 let test: string = embedding.toString()
 
+function displayPrice() {
+  try {
+    return test
+  } catch (error) {
+    return error.message
+  }
+}
+
 export default function Page() {
   const realProductRef = useRef<HTMLInputElement>(null)
   const [ realProduct, setRealProduct ] = useState("")
   const price = usePrice(realProduct)
+
+  function getPrice() {
+    if (realProductRef.current?.value) {
+      setRealProduct(realProductRef.current.value)
+    }
+  }
   
   return (
     <div>
       <input ref={realProductRef} type="text" placeholder="Real product" />
-      <br />
-      <button onClick={() => {
-        if (realProductRef.current?.value) {
-          setRealProduct(realProductRef.current.value)
-        }
-      }}>Price</button>
-      <br />
-      <div>{test}</div>
+      <button onClick={getPrice()}>Price</button>
+      <div>{displayPrice()}</div>
     </div>
   )
 }
