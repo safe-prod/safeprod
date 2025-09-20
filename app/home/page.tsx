@@ -13,13 +13,13 @@ function displayPrice() {
   try {
     return test
   } catch (error) {
-    return error.message
+    return (error as Error).message || "An unknown error occurred"
   }
 }
 
 export default function Page() {
-  const realProductRef = useRef<HTMLInputElement>(null)
   const [ realProduct, setRealProduct ] = useState("")
+  const realProductRef = useRef<HTMLInputElement>(null)
   const price = usePrice(realProduct)
 
   function getPrice() {
