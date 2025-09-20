@@ -3,10 +3,10 @@ import { useState, useRef } from "react"
 import usePrice from "../../product/usePrice"
 
 import { embed } from "ai"
-const { embedding } = await embed(
+const { embedding } = await embed({
   model: `${process.env.NEXT_PUBLIC_EMBEDDING_MODEL}`,
   value: "apple"
-)
+})
 let test = embedding
 
 export default function Page() {
