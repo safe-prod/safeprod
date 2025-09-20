@@ -4,7 +4,7 @@ import usePrice from "../../product/usePrice"
 
 import { embed } from "ai"
 
-function displayPrice() {
+async function displayPrice() {
   try {
     const { embedding } = await embed({
       model: `${process.env.NEXT_PUBLIC_EMBEDDING_MODEL}`,
