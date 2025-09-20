@@ -1,6 +1,8 @@
+"use client"
+import { useState, useEffect, useRef } from "react"
 import { embed } from "ai"
 
-export async function getPrice(realProduct: string) {
+async function getPrice(realProduct: string) {
   try {
     const { embedding } = await embed({
       model: `${process.env.NEXT_PUBLIC_EMBEDDING_MODEL}`,
@@ -10,4 +12,45 @@ export async function getPrice(realProduct: string) {
   } catch (error) {
     return (error as Error).message || "An unknown error occurred"
   }
+}
+
+export default function PricePage() {
+  const [ realProduct, setRealProduct ] = useState("")
+  const [ price, setPrice ] = useState<number[] | string>("")
+  const realProductRef = useRef<HTMLInputElement>(null)
+  
+  useEffect(() => {
+    const updatePrice = async () => {
+      try {
+        let newPrice = await getPrice(realProduct)
+        setPrice(newPrice)
+      } catch (error) {
+        return (error as Error).message || "An unknown error occurred"
+      }
+    }
+    updatePrice()
+  }, [ realProduct ])
+  
+  function handleGetPrice() {
+    if (realProductRef.current?.value) {
+      setRealProduct(realProductRef.current.value)
+    }
+  }
+
+  function displayPrice() {
+    try {
+      return price.toString()
+    } catch (error) {
+      return (error as Error).message || "An unknown error occurred"
+    }
+  }
+ 
+  return (
+    <div>
+      <input ref={realProductRef} type="text" placeholder="Real product" />
+      <div onClick={handleGetPrice}>Price</div>
+      <div>{displayPrice()}</div>
+      <div>{realProduct}</div>
+    </div>
+  )
 }
