@@ -1,6 +1,6 @@
 import { embed } from "ai"
 
-export async function getPrice(realProduct: string): Promise<number[]> | Error {
+export async function getPrice(realProduct: string) {
   try {
     const { embedding } = await embed({
       model: `${process.env.NEXT_PUBLIC_EMBEDDING_MODEL}`,
