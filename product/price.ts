@@ -1,3 +1,4 @@
+"use client"
 import { embed } from "ai"
 
 export async function getPrice(realProduct: string) {
