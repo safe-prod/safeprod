@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react"
-import { useAuth } from "../../whitelabels/AuthContext"
+import { useAuth } from "./authContext"
 
 export default function LoginPage() {
   const { signIn, signUp, signOut, user } = useAuth()
