@@ -6,7 +6,8 @@ async function getPrice(realProduct: string) {
   try {
     const { embedding } = await embed({
       model: `${process.env.NEXT_PUBLIC_EMBEDDING_MODEL}`,
-      value: realProduct
+      value: realProduct,
+      apiKey: `${process.env.AI_GATEWAY_API_KEY}`
     })
     return embedding
   } catch (error) {
