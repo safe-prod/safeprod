@@ -31,7 +31,7 @@ export default function Page() {
   return (
     <div>
       <input ref={realProductRef} type="text" placeholder="Real product" />
-      <button onClick={getPrice()}>Price</button>
+      <button onClick={getPrice}>Price</button>
       <div>{displayPrice()}</div>
     </div>
   )
