@@ -1,13 +1,15 @@
 "use client"
-import { useState, useRef } from "react"
-import usePrice from "../../product/usePrice"
+import { useState, useEffect, useRef } from "react"
+import { getPrice } from "../../product/price"
 
 export default function Page() {
   const [ realProduct, setRealProduct ] = useState("")
+  const [ price, setPrice ] = useState<number[]>([])
   const realProductRef = useRef<HTMLInputElement>(null)
-  const price = usePrice(realProduct)
-
-  function getPrice() {
+  
+  useEffect(() => {getPrice(realProduct)}, [ realProduct ])
+  
+  function handleGetPrice() {
     if (realProductRef.current?.value) {
       setRealProduct(realProductRef.current.value)
     }
@@ -24,7 +26,7 @@ export default function Page() {
   return (
     <div>
       <input ref={realProductRef} type="text" placeholder="Real product" />
-      <button onClick={getPrice}>Price</button>
+      <button onClick={handleGetPrice}>Price</button>
       <div>{displayPrice()}</div>
     </div>
   )
