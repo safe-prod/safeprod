@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react"
 import { embed } from "ai"
 
+/*
 async function getPrice(realProduct: string) {
   try {
     const { embedding } = await embed({
@@ -13,6 +14,17 @@ async function getPrice(realProduct: string) {
     return (error as Error).message || "An unknown error occurred"
   }
 }
+*/
+let test = ""
+try {
+    const { embedding } = await embed({
+      model: `${process.env.NEXT_PUBLIC_EMBEDDING_MODEL}`,
+      value: "banana"
+    })
+    test = embedding.toString()
+  } catch (error) {
+    test = (error as Error).message || "An unknown error occurred"
+  }
 
 export default function PricePage() {
   const [ realProduct, setRealProduct ] = useState("")
@@ -45,6 +57,7 @@ export default function PricePage() {
       <input ref={realProductRef} type="text" placeholder="Real product" />
       <div onClick={handleGetPrice}>Price</div>
       <div>{displayPrice()}</div>
+      <div>{test}</div>
       <div>{realProduct}</div>
     </div>
   )
