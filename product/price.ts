@@ -1,4 +1,3 @@
-"use client"
 import { embed } from "ai"
 
 export async function getPrice(realProduct: string) {
@@ -9,7 +8,6 @@ export async function getPrice(realProduct: string) {
     })
     return embedding
   } catch (error) {
-    // return (error as Error).message || "An unknown error occurred"
-    return [0]
+    return (error as Error).message || "An unknown error occurred"
   }
 }
