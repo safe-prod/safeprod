@@ -38,11 +38,7 @@ export default function PricePage() {
   }
 
   function displayPrice() {
-    try {
-      return price.toString()
-    } catch (error) {
-      return (error as Error).message || "An unknown error occurred"
-    }
+    return price.toString()
   }
  
   return (
