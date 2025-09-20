@@ -34,7 +34,7 @@ export default function PricePage() {
   useEffect(() => {
     const updatePrice = async () => {
       try {
-        setPrice(await getPrice(realProduct))
+        // setPrice(await getPrice(realProduct))
       } catch (error) {
         return (error as Error).message || "An unknown error occurred"
       }
