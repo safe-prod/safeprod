@@ -26,8 +26,9 @@ export default function Page() {
   return (
     <div>
       <input ref={realProductRef} type="text" placeholder="Real product" />
-      <button onClick={handleGetPrice}>Price</button>
+      <div onClick={handleGetPrice}>Price</div>
       <div>{displayPrice()}</div>
+      <div>{realProduct}</div>
     </div>
   )
 }
