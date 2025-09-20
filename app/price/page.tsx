@@ -6,8 +6,7 @@ async function getPrice(realProduct: string) {
   try {
     const { embedding } = await embed({
       model: `${process.env.NEXT_PUBLIC_EMBEDDING_MODEL}`,
-      value: realProduct,
-      apiKey: `${process.env.AI_GATEWAY_API_KEY}`
+      value: realProduct
     })
     return embedding
   } catch (error) {
@@ -17,14 +16,13 @@ async function getPrice(realProduct: string) {
 
 export default function PricePage() {
   const [ realProduct, setRealProduct ] = useState("")
-  const [ price, setPrice ] = useState<number[] | string>("")
+  const [ price, setPrice ] = useState<number[] | string>([])
   const realProductRef = useRef<HTMLInputElement>(null)
   
   useEffect(() => {
     const updatePrice = async () => {
       try {
-        let newPrice = await getPrice(realProduct)
-        setPrice(newPrice)
+        setPrice(await getPrice(realProduct))
       } catch (error) {
         return (error as Error).message || "An unknown error occurred"
       }
