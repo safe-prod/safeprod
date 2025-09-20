@@ -7,12 +7,21 @@ export default function Page() {
   const [ price, setPrice ] = useState<number[]>([])
   const realProductRef = useRef<HTMLInputElement>(null)
   
-  useEffect(() => {getPrice(realProduct)}, [ realProduct ])
+  useEffect(() => {
+    const updatePrice = async () => {
+      try {
+        let newPrice = await getPrice(realProduct)
+        setPrice(newPrice)
+      } catch (error) {
+        return (error as Error).message || "An unknown error occurred"
+      }
+    }
+    updatePrice()
+  }, [ realProduct ])
   
   function handleGetPrice() {
     if (realProductRef.current?.value) {
-      let realProductValue = realProductRef.current.value
-      setRealProduct(realProductValue)
+      setRealProduct(realProductRef.current.value)
     }
   }
 
