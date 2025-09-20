@@ -6,11 +6,15 @@ export default function usePrice(realProduct: string): number[] {
   
   useEffect(() => {
     const priceRealProduct = async () => {
-      const { embedding } = await embed({
-        model: `${process.env.NEXT_PUBLIC_EMBEDDING_MODEL}`,
-        value: realProduct
-      })
-      setPrice(embedding)
+      try {
+        const { embedding } = await embed({
+          model: `${process.env.NEXT_PUBLIC_EMBEDDING_MODEL}`,
+          value: realProduct
+        })
+        setPrice(embedding)
+      } catch (error) {
+        return (error as Error).message || "An unknown error occurred"
+      }
     }
     priceRealProduct()
   }, [ realProduct ])
