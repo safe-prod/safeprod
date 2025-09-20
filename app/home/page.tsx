@@ -2,9 +2,16 @@
 import { useState, useRef } from "react"
 import usePrice from "../../product/usePrice"
 
+import { embed } from "ai"
+const { embedding } = await embed(
+  model: `${process.env.NEXT_PUBLIC_EMBEDDING_MODEL}`,
+  value: "apple"
+)
+let test = embedding
+
 export default function Page() {
   const realProductRef = useRef<HTMLInputElement>(null)
-  const [ realProduct, setRealProduct ] = useState("apple")
+  const [ realProduct, setRealProduct ] = useState("")
   const price = usePrice(realProduct)
   
   return (
@@ -17,7 +24,7 @@ export default function Page() {
         }
       }}>Price</button>
       <br />
-      <div>{price}</div>
+      <div>{test}</div>
     </div>
   )
 }
