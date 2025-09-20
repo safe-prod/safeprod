@@ -1,38 +1,10 @@
 "use client"
-import { useState, useEffect, useRef } from "react"
-import { getPrice } from "../../product/price"
+import { Price } from "../../product/price"
 
 export default function PricePage() {
-  const [ realProduct, setRealProduct ] = useState("")
-  const [ price, setPrice ] = useState<number[] | string>([])
-  const realProductRef = useRef<HTMLInputElement>(null)
-  
-  useEffect(() => {
-    const updatePrice = async () => {
-      try {
-        setPrice(await getPrice(realProduct))
-      } catch (error) {
-        return (error as Error).message || "An unknown error occurred"
-      }
-    }
-    updatePrice()
-  }, [ realProduct ])
-  
-  function handleGetPrice() {
-    if (realProductRef.current?.value) {
-      setRealProduct(realProductRef.current.value)
-    }
-  }
-
-  function displayPrice() {
-    return price.toString()
-  }
- 
   return (
     <div>
-      <input ref={realProductRef} type="text" placeholder="Real product" />
-      <div onClick={handleGetPrice}>Price</div>
-      <div>{displayPrice()}</div>
+      <Price />
     </div>
   )
 }
