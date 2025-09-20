@@ -10,9 +10,10 @@ export default function Page() {
   useEffect(() => {getPrice(realProduct)}, [ realProduct ])
   
   function handleGetPrice() {
-    // if (realProductRef.current?.value) {
-    setRealProduct(realProductRef.current?.value)
-    // }
+    if (realProductRef.current?.value) {
+      let realProductValue = realProductRef.current.value
+      setRealProduct(realProductValue)
+    }
   }
 
   function displayPrice() {
