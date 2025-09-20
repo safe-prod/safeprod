@@ -3,15 +3,14 @@ import { useState, useRef } from "react"
 import usePrice from "../../product/usePrice"
 
 import { embed } from "ai"
-const { embedding } = await embed({
-  model: `${process.env.NEXT_PUBLIC_EMBEDDING_MODEL}`,
-  value: "apple"
-})
-let test: string = embedding.toString()
 
 function displayPrice() {
   try {
-    return test
+    const { embedding } = await embed({
+      model: `${process.env.NEXT_PUBLIC_EMBEDDING_MODEL}`,
+      value: "apple"
+    })
+    return embedding.toString()
   } catch (error) {
     return (error as Error).message || "An unknown error occurred"
   }
