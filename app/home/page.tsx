@@ -4,7 +4,7 @@ import usePrice from "../../product/usePrice"
 
 export default function Page() {
   const realProductRef = useRef<HTMLInputElement>(null)
-  const [ realProduct, setRealProduct ] = useState("")
+  const [ realProduct, setRealProduct ] = useState("apple")
   const price = usePrice(realProduct)
   
   return (
