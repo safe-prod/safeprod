@@ -1,6 +1,6 @@
 "use client"
 import { useState, useRef } from "react"
-import usePrice from "../products/usePrice"
+import usePrice from "../../products/usePrice"
 
 export default function Page() {
   const realProductRef = useRef<HTMLInputElement>(null)
