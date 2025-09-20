@@ -8,6 +8,7 @@ export async function getPrice(realProduct: string) {
     })
     return embedding
   } catch (error) {
-    return (error as Error).message || "An unknown error occurred"
+    // return (error as Error).message || "An unknown error occurred"
+    return [0]
   }
 }
