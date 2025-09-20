@@ -7,7 +7,7 @@ const { embedding } = await embed({
   model: `${process.env.NEXT_PUBLIC_EMBEDDING_MODEL}`,
   value: "apple"
 })
-let test = embedding
+let test: string = embedding.toString()
 
 export default function Page() {
   const realProductRef = useRef<HTMLInputElement>(null)
