@@ -4,7 +4,7 @@ import { getPrice } from "../../product/price"
 
 export default function Page() {
   const [ realProduct, setRealProduct ] = useState("")
-  const [ price, setPrice ] = useState<number[] | string>(null)
+  const [ price, setPrice ] = useState<number[] | string>("")
   const realProductRef = useRef<HTMLInputElement>(null)
   
   useEffect(() => {
