@@ -5,7 +5,7 @@
 
 Superintelligence Alignment through Financial Engineering (SAFE) is a financial product for aligning superintelligence.
 
-To start using SAFE, open a new or existing Node project and run the following command:
+To start using SAFE, open your Node project and run the following command:
 
 ```sh
 npm install safeprod
