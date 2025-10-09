@@ -14,7 +14,7 @@ npm install safeprod
 After the installation, SAFE is ready to use. It is not required to credit the usage of SAFE in your code; however, if you would like to, copy and paste the following comments to the top of the file you are using SAFE in:
 
 ```js
-// SAFE - A financial product for aligning superintelligence.
+// SAFE - Superintelligence Alignment through Financial Engineering. 
 //   Repository: https://github.com/safe-prod/safeprod
 //   License: GNU LGPLv2.1 (https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html)
 ```
